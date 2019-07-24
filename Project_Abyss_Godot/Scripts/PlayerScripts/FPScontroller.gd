@@ -115,7 +115,7 @@ func walk(delta):
 	velocity = move_and_slide(velocity, Vector3(0, 1, 0))
 	
 	if !has_contact:
-		print(in_air)
+		#print(in_air)
 		in_air += 1
 		
 	$StairCatcher.translation.x = direction.x
