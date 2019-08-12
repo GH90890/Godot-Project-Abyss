@@ -71,12 +71,14 @@ func walk(delta):
 	else:
 		if !$Tail.is_colliding():
 			has_contact = false
+		
 		velocity.y += gravity * delta
 		velocity.y = -1
 
 	if (has_contact and !is_on_floor()):
 		if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right") || Input.is_action_pressed("move_backward") || Input.is_action_pressed("move_forward"):
 			move_and_collide(Vector3(0, -1, 0))
+
 	
 	if (direction.length() > 0 and $StairCatcher.is_colliding()):
 		var stair_normal = $StairCatcher.get_collision_normal()
@@ -126,7 +128,7 @@ func aim():
 		$Head.rotate_y(deg2rad(-camera_change.x * mouse_sensitivity))
 
 		var change = -camera_change.y * mouse_sensitivity
-		if change + camera_angle < 90 and change + camera_angle > -90:
+		if change + camera_angle < 60 and change + camera_angle > -60:
 			$Head/Camera.rotate_x(deg2rad(change))
 			camera_angle += change
 		camera_change = Vector2()
@@ -140,3 +142,24 @@ func _on_Area_body_entered( body ):
 func _on_Area_body_exited( body ):
 	if body.name == "Player":
 		flying = false
+
+
+#================================================ PLAYER STOPPER FOR Y AXIS
+const yStopper = preload ("res://PreFab/Ymovementstopper.tscn")
+var yMovementStopper = yStopper.instance()
+var ownBodyLocation = self.translation
+var boolPlatform = false
+# if movement stops spawn platform at x.y.z from this node.
+# if movement is pressed, it destroys itself (code in the ymovement object self?)
+#
+#
+func _process(delta: float) -> void:
+	if !Input.is_action_pressed("move_left") || !Input.is_action_pressed("move_right") || !Input.is_action_pressed("move_backward") || !Input.is_action_pressed("move_forward"):
+	#spawn the thing ymovement stopper
+		if boolPlatform == false:
+			get_parent().add_child(yMovementStopper)
+			boolPlatform = true
+			
+	if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right") || Input.is_action_pressed("move_backward") || Input.is_action_pressed("move_forward"):
+		if boolPlatform == true:
+			boolPlatform = false

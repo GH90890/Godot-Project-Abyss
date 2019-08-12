@@ -1,0 +1,37 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://Scripts/Character_Rotator.gd" type="Script" id=1]
+[ext_resource path="res://2Dfolder/Material/new_spatialmaterial.tres" type="Material" id=2]
+[ext_resource path="res://2Dfolder/Material/Character_Material.tres" type="Material" id=3]
+[ext_resource path="res://2Dfolder/Character_Images/8-2-john-cena-body-png.png" type="Texture" id=4]
+[ext_resource path="res://2Dfolder/Material/Character_Material_Shadow.tres" type="Material" id=5]
+
+[node name="Spatial" type="Spatial"]
+transform = Transform( 0.4, 0, 0, 0, 0.4, 0, 0, 0, 0.4, 0, 0, 0 )
+script = ExtResource( 1 )
+
+[node name="CSGCylinder" type="CSGCylinder" parent="."]
+transform = Transform( -1, 0, -8.74228e-008, 0, 3, 0, 8.74228e-008, 0, -1, 0, 2.64868, 0 )
+layers = 0
+radius = 0.874
+height = 1.308
+material = ExtResource( 2 )
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform( 0.3, 0, -1.02141e-013, 0, 0.3, 0, 4.88498e-014, 0, 0.5, 0, 2.68067, 0 )
+material_override = ExtResource( 3 )
+flip_h = true
+texture = ExtResource( 4 )
+
+[node name="Sprite3Dshadow" type="Sprite3D" parent="."]
+transform = Transform( -0.3, 0, -4.37114e-008, 0, 0.3, 0, 2.62268e-008, 0, -0.5, 0, 2.68067, -0.0119263 )
+material_override = ExtResource( 5 )
+transparent = false
+texture = ExtResource( 4 )
+
+[node name="Sprite3Dshadowflipped" type="Sprite3D" parent="Sprite3Dshadow"]
+transform = Transform( -1, 0, 1.45705e-007, 0, 1, 0, -5.24537e-008, 0, -1, -2.23678e-008, 0, 0.153514 )
+material_override = ExtResource( 5 )
+flip_h = true
+transparent = false
+texture = ExtResource( 4 )
