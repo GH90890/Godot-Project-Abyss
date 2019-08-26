@@ -114,7 +114,7 @@ func walk(delta):
 	velocity.z = temp_velocity.z
 	
 	# move
-	velocity = move_and_slide_with_snap(velocity, Vector3(0, -4.5, 0), Vector3(0, 1, 0), true, 4, deg2rad(45), false)
+	velocity = move_and_slide_with_snap(velocity, Vector3(0, -0.01, 0), Vector3(0, 1, 0), true, 4, deg2rad(45), false)
 	
 	if !has_contact:
 		#print(in_air)
@@ -145,21 +145,22 @@ func _on_Area_body_exited( body ):
 
 
 #================================================ PLAYER STOPPER FOR Y AXIS
-const yStopper = preload ("res://PreFab/Ymovementstopper.tscn")
-var yMovementStopper = yStopper.instance()
-var ownBodyLocation = self.translation
-var boolPlatform = false
+#const yStopper = preload ("res://PreFab/Ymovementstopper.tscn")
+#var yMovementStopper = yStopper.instance()
+#var ownBodyLocation = self.translation
+#var boolPlatform = false
 # if movement stops spawn platform at x.y.z from this node.
 # if movement is pressed, it destroys itself (code in the ymovement object self?)
 #
 #
-func _process(delta: float) -> void:
-	if !Input.is_action_pressed("move_left") || !Input.is_action_pressed("move_right") || !Input.is_action_pressed("move_backward") || !Input.is_action_pressed("move_forward"):
-	#spawn the thing ymovement stopper
-		if boolPlatform == false:
-			get_parent().add_child(yMovementStopper)
-			boolPlatform = true
-			
-	if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right") || Input.is_action_pressed("move_backward") || Input.is_action_pressed("move_forward"):
-		if boolPlatform == true:
-			boolPlatform = false
+#func _process(delta: float) -> void:
+#	if !Input.is_action_pressed("move_left") || !Input.is_action_pressed("move_right") || !Input.is_action_pressed("move_backward") || !Input.is_action_pressed("move_forward"):
+#	#spawn the thing ymovement stopper
+#		if boolPlatform == false:
+#			get_parent().add_child(yMovementStopper)
+#			boolPlatform = true
+#			
+#	if Input.is_action_pressed("move_left") || Input.is_action_pressed("move_right") || Input.is_action_pressed("move_backward") || Input.is_action_pressed("move_forward"):
+#		if boolPlatform == true:
+#			boolPlatform = false
+#
