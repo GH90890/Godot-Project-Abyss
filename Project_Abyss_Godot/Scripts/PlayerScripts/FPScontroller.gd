@@ -114,7 +114,7 @@ func walk(delta):
 	velocity.z = temp_velocity.z
 	
 	# move
-	velocity = move_and_slide_with_snap(velocity, Vector3(0, -0.01, 0), Vector3(0, 1, 0), true, 4, deg2rad(45), false)
+	velocity = move_and_slide_with_snap(velocity, Vector3(0, -1, 0), Vector3(0, 1, 0), true, 4, deg2rad(45), false)
 	
 	if !has_contact:
 		#print(in_air)
