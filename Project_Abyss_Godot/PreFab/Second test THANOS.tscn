@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Character_Rotator.gd" type="Script" id=1]
 [ext_resource path="res://2Dfolder/Material/new_spatialmaterial.tres" type="Material" id=2]
 [ext_resource path="res://2Dfolder/Material/Final_Character_Material.tres" type="Material" id=3]
-[ext_resource path="res://2Dfolder/Character_Images/8-2-john-cena-body-png.png" type="Texture" id=4]
+[ext_resource path="res://2Dfolder/Character_Images/thanos/armorless_walk.png" type="Texture" id=4]
 [ext_resource path="res://2Dfolder/Material/Final_Character_Material_Shadow.tres" type="Material" id=5]
 
 [node name="Spatial" type="Spatial"]
@@ -18,7 +18,7 @@ height = 1.308
 material = ExtResource( 2 )
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform( 0.3, 0, -1.02141e-013, 0, 0.3, 0, 4.88498e-014, 0, 0.5, 0, 2.68067, 0 )
+transform = Transform( 0.3, 0, -8.14163e-014, 0, 0.3, 0, 4.88498e-014, 0, 0.5, 0, 2.68067, 0 )
 material_override = ExtResource( 3 )
 cast_shadow = 2
 flip_h = true
@@ -27,7 +27,7 @@ alpha_cut = 2
 texture = ExtResource( 4 )
 
 [node name="Sprite3D2" type="Sprite3D" parent="."]
-transform = Transform( 0.3, 0, -1.02141e-013, 0, 0.3, 0, 4.88498e-014, 0, 0.5, 0, 2.68067, -0.0573303 )
+transform = Transform( 0.3, 0, -8.14163e-014, 0, 0.3, 0, 4.88498e-014, 0, 0.5, 0, 2.68067, -0.0573303 )
 material_override = ExtResource( 5 )
 cast_shadow = 2
 flip_h = true
@@ -36,7 +36,7 @@ alpha_cut = 2
 texture = ExtResource( 4 )
 
 [node name="Sprite3D3" type="Sprite3D" parent="Sprite3D2"]
-transform = Transform( -1, 0, -8.74228e-008, 0, 1, 0, 8.74228e-008, 0, -1, 0, 0, 0 )
+transform = Transform( -1, 0, -1.50996e-007, 0, 1, 0, 1.50996e-007, 0, -1, 0, 0, 0 )
 material_override = ExtResource( 5 )
 cast_shadow = 2
 shaded = true

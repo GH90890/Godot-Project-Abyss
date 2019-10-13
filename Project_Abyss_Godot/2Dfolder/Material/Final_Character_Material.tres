@@ -2,6 +2,6 @@
 
 [resource]
 flags_transparent = true
-flags_unshaded = true
 flags_albedo_tex_force_srgb = true
+params_depth_draw_mode = 1
 params_billboard_keep_scale = true

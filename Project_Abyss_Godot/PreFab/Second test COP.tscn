@@ -3,7 +3,7 @@
 [ext_resource path="res://Scripts/Character_Rotator.gd" type="Script" id=1]
 [ext_resource path="res://2Dfolder/Material/new_spatialmaterial.tres" type="Material" id=2]
 [ext_resource path="res://2Dfolder/Material/Final_Character_Material.tres" type="Material" id=3]
-[ext_resource path="res://2Dfolder/Character_Images/8-2-john-cena-body-png.png" type="Texture" id=4]
+[ext_resource path="res://2Dfolder/Character_Images/cop.png" type="Texture" id=4]
 [ext_resource path="res://2Dfolder/Material/Final_Character_Material_Shadow.tres" type="Material" id=5]
 
 [node name="Spatial" type="Spatial"]
