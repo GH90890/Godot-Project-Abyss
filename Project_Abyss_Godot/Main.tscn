@@ -292,4 +292,4 @@ alpha_cut = 2
 texture = ExtResource( 19 )
 
 [node name="Spatial" parent="." instance=ExtResource( 21 )]
-transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 17.8476, -10.7648, 24.6253 )
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 17.8476, -10.8703, 24.6253 )
