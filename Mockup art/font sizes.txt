@@ -1,2 +1,6 @@
 Character icons text is FOTS-comet at 41 size
 dialoge is FOT-humming std D at size 33
+
+color of glow is 0,169,225
+size 5
+softness 255
