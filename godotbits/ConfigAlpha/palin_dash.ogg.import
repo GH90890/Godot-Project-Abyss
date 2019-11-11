@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/palin_dash.ogg-880518c8f73e844df4be6ed06b73a48d.oggstr"
+
+[deps]
+
+source_file="res://palin_dash.ogg"
+dest_files=[ "res://.import/palin_dash.ogg-880518c8f73e844df4be6ed06b73a48d.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
