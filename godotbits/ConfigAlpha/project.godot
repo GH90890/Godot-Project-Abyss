@@ -19,6 +19,10 @@ config/name="New Game Project"
 run/main_scene="res://Root.tscn"
 config/icon="res://icon.png"
 
+[autoload]
+
+Settings="*res://Settings.gd"
+
 [input]
 
 mouse_left={
