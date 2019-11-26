@@ -21,7 +21,7 @@ config/icon="res://icon.png"
 
 [autoload]
 
-Settings="*res://Settings.gd"
+ConfigSaveSystem="*res://ConfigSaveSystem.gd"
 
 [input]
 

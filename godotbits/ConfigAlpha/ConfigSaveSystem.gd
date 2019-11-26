@@ -1,12 +1,13 @@
 extends Node
 
-const SAVE_PATH = "user://config.cfg"
-
+const SAVE_PATH = "res://config.cfg"
 var _config_file = ConfigFile.new()
+
+#=== TODO FIND A BETTER WAY TO DO THIS
+
 var _settings = {
 	"audio": {
-		"mute": get("Settings/mute"),
-		"sfx_value":get("Settings/mute")
+		"sfx_value":get_node("res://ConfigSaveSystem.gd")
 		},
 }
 
@@ -16,6 +17,7 @@ func _ready() -> void:
 	print(_settings)
 
 func save_settings():
+	print("I am saving..")
 	for section in _settings.keys():
 		for key in _settings[section]:
 			_config_file.set_value(section, key, _settings[section][key])
