@@ -47,3 +47,7 @@ func _on_SaveButton_button_down() -> void:
 
 func _on_Load_Button_button_down() -> void:
 	loadPressed()
+
+
+func _on_SFX_Slider_value_changed(value: float) -> void:
+	print("I got changed!")

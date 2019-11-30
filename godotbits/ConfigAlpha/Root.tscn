@@ -57,5 +57,6 @@ margin_top = 314.657
 margin_right = 496.425
 margin_bottom = 334.657
 text = "Load from config"
+[connection signal="value_changed" from="PanelContainer/Setting Audio Holder/SFX Slider" to="PanelContainer/Setting Audio Holder" method="_on_SFX_Slider_value_changed"]
 [connection signal="button_down" from="PanelContainer/Save-load Button/SaveButton" to="PanelContainer/Setting Audio Holder" method="_on_SaveButton_button_down"]
 [connection signal="button_down" from="PanelContainer/Save-load Button/Load Button" to="PanelContainer/Setting Audio Holder" method="_on_Load_Button_button_down"]
