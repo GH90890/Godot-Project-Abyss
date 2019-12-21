@@ -1,10 +1,20 @@
 extends Actor
 
 
+export var stomp_impulse: = 1000.0
+
+func _on_EnemyDetector_area_entered(area: Area2D) -> void:
+	_velocity = calculate_stomp_velocity(_velocity, stomp_impulse)
+	
+func _on_EnemyDetector_body_entered(body: PhysicsBody2D) -> void:
+	queue_free() # player fucking dies .jpeg
+
+
 func _physics_process(delta: float) -> void: ## apparently, this also uses the Actor process alongside it. very cool.
-	var direction: = get_direction()
-	velocity = calculate_move_velocity(velocity, direction, speed)
-	velocity = move_and_slide(velocity)  # SET THIS https://www.youtube.com/watch?v=Mc13Z2gboEk&list=PLhqJJNjsQ7KH_z21S_XeXD3Ht3WnSqW97 1:00:00
+	var is_jump_interrupted: = Input.is_action_just_released("jump") and _velocity.y < 0.0 # when jumping the _velocity is in a minus state. meaning its going up!
+	var direction: = get_direction() ## this is scoped.
+	_velocity = calculate_move_velocity(_velocity, direction, speed, is_jump_interrupted)
+	_velocity = move_and_slide(_velocity, FLOOR_NORMAL) 
 
 	
 func get_direction() -> Vector2:
@@ -14,15 +24,26 @@ func get_direction() -> Vector2:
 	) # moving right is 1.0 while moving to the left is -1.0. allowing to move left or right.
 
 
-
 func calculate_move_velocity(
 		linear_velocity: Vector2,
 		direction: Vector2, 
-		speed: Vector2
+		speed: Vector2,
+		is_jump_interrupted: bool
 	) -> Vector2:
-	var new_velocity: = linear_velocity
-	new_velocity.x = speed.x * direction.x
-	new_velocity.y += gravity * get_physics_process_delta_time() # delta is a vlue that checks the time between frames. very handy if you are laggy. etc.
+	var out: = linear_velocity
+	out.x = speed.x * direction.x
+	out.y += gravity * get_physics_process_delta_time() # delta is a vlue that checks the time between frames. very handy if you are laggy. etc.
 	if direction.y == -1.0:
-		velocity.y = speed.y * direction.y
-	return new_velocity
+		out.y = speed.y * direction.y
+	if is_jump_interrupted: # if its true.
+		out.y = 0.0
+	return out
+
+func calculate_stomp_velocity(
+	linear_velocity: Vector2,
+	impulse: float ) -> Vector2:
+		var out = linear_velocity
+		out.y = -impulse
+		return out
+
+
