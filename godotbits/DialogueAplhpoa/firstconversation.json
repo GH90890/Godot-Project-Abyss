@@ -1,0 +1,38 @@
+{
+  "001": {
+    "dialogue_MainCharacter": "false",
+    "dialogue_Text": "This is the firstjson text!",
+    "dialogue_TextBoxStyle": "IdBox",
+    "dialogue_ForceSkip": "false",
+    "dialogue_Nameplate": "IdNameplate",
+    "character_CharacterSprite": "IdSprite",
+    "character_CharacterShaking": "false",
+    "camera_CameraFocus": "CurrentCharacter",
+    "camera_CameraEffect": "IdEffect",
+    "sound_SoundEffect": "IdSoundEffect",
+    "sound_CharacterVoiceLine": "IdVoice",
+    "sound_Music": {
+      "MusicSpeed": "1.0",
+      "MusicTrack": "IdTrack",
+      "MusicVolume": "1.0"
+    }
+  }
+"002": {
+    "dialogue_MainCharacter": "false",
+    "dialogue_Text": "Hello, this is a test massage!",
+    "dialogue_TextBoxStyle": "IdBox",
+    "dialogue_ForceSkip": "false",
+    "dialogue_Nameplate": "IdNameplate",
+    "character_CharacterSprite": "IdSprite",
+    "character_CharacterShaking": "false",
+    "camera_CameraFocus": "CurrentCharacter",
+    "camera_CameraEffect": "IdEffect",
+    "sound_SoundEffect": "IdSoundEffect",
+    "sound_CharacterVoiceLine": "IdVoice",
+    "sound_Music": {
+      "MusicSpeed": "1.0",
+      "MusicTrack": "IdTrack",
+      "MusicVolume": "1.0"
+    }
+  }
+}

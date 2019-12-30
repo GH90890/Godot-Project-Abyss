@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://Scripts/turnOrder/TurnQueue.gd" type="Script" id=1]
+[ext_resource path="res://icon_godot.png" type="Texture" id=2]
+
+[node name="TurnQueue" type="Node"]
+script = ExtResource( 1 )
+
+[node name="Gobot1" type="Sprite" parent="."]
+position = Vector2( 48.6524, 61.6211 )
+texture = ExtResource( 2 )
+offset = Vector2( -11.0059, -16.1701 )
+
+[node name="Gobot2" type="Sprite" parent="."]
+position = Vector2( 48.6524, 143.216 )
+texture = ExtResource( 2 )
+offset = Vector2( -11.0059, -16.1701 )
+
+[node name="Gobot3" type="Sprite" parent="."]
+position = Vector2( 48.6524, 219.406 )
+texture = ExtResource( 2 )
+offset = Vector2( -11.0059, -16.1701 )

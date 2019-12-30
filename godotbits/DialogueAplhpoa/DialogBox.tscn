@@ -33,7 +33,7 @@ bbcode_enabled = true
 script = ExtResource( 1 )
 
 [node name="Timer" type="Timer" parent="Polygon2D"]
-wait_time = 0.05
+wait_time = 0.02
 autostart = true
 [connection signal="pressed" from="Button" to="Polygon2D/RichTextLabel" method="_on_Button_pressed"]
 [connection signal="timeout" from="Polygon2D/Timer" to="Polygon2D/RichTextLabel" method="_on_Timer_timeout"]

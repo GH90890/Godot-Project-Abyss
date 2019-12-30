@@ -1,0 +1,52 @@
+var dialogue_Text 					#Displays the text
+var dialogue_CameraFocus			#Focuses the camera on a vector3
+var dialogue_CameraEffect			#What shader to use, or other wacky effects
+var dialogue_CharacterSprite		#And Id or string for which sprite to show
+var dialogue_CharacterNameGraphic	#Displays a graphic for names, rather then plain text (maybwe tied to character name?)
+var dialogue_CharacterVoiceLine		#plays a sound effect
+var dialogue_CharacterShaking		#bools for SHAKING
+var dialogue_TextBoxStyle			#Text box changes graphic depending on situation (cracked etc)
+var dialogue_SoundEffect			#Dramatic effects sounds
+var dialogue_AutoTimerSkip			#Time it takes for the auto text to skip (might take .lenght * seconds it.)
+var dialogue_ForceSkip				#Skips dialogue
+var dialogue_Music					#plays music
+
+
+
+{
+  "000": {
+    "dialogue_MainCharacter": "false",
+    "dialogue_Text": "Hello",
+    "dialogue_TextBoxStyle": "IdBox",
+    "dialogue_ForceSkip": "false",
+    "dialogue_Nameplate": "IdNameplate",
+    "character_CharacterSprite": "IdSprite",
+    "character_CharacterShaking": "false",
+    "camera_CameraFocus": "CurrentCharacter",
+    "camera_CameraEffect": "IdEffect",
+    "sound_SoundEffect": "IdSoundEffect",
+    "sound_CharacterVoiceLine": "IdVoice",
+    "sound_Music": {
+      "MusicSpeed": "1.0",
+      "MusicTrack": "IdTrack",
+      "MusicVolume": "1.0"
+    }
+  }
+}
+http://www.objgen.com/json
+000
+  dialogue_MainCharacter = false
+  dialogue_Text = Hello
+  dialogue_TextBoxStyle = IdBox
+  dialogue_ForceSkip = false
+  dialogue_Nameplate = IdNameplate
+  character_CharacterSprite = IdSprite
+  character_CharacterShaking = false
+  camera_CameraFocus  = CurrentCharacter
+  camera_CameraEffect  = IdEffect
+  sound_SoundEffect = IdSoundEffect
+  sound_CharacterVoiceLine = IdVoice
+  sound_Music
+    MusicSpeed = 1.0
+    MusicTrack = IdTrack
+    MusicVolume = 1.0

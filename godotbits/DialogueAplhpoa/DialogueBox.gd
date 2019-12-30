@@ -25,6 +25,7 @@ func _on_Button_pressed() -> void:
 			set_visible_characters(get_total_character_count())
 
 func _on_Timer_timeout():
-	set_visible_characters(get_visible_characters()+1)
+	if(self.visible_characters < 500): # avoids infinite characters that end up blowing up the int value.
+		set_visible_characters(get_visible_characters()+1)
 
 
