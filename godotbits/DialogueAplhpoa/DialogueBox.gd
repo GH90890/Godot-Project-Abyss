@@ -5,6 +5,9 @@ extends RichTextLabel
 var dialog = [
 	"Hey! This is a texty boy.",
 	"Whoa, Actual dialogue scrolling!",
+	"Whoa, Actual dialogue scrolling!",
+	"Whoa, Actual dialogue scrolling!",
+	"Whoa, Actual dialogue scrolling!",
 	"soo this is a [color=red]red[/color] boy!"]
 var page = 0
 
@@ -25,7 +28,7 @@ func _on_Button_pressed() -> void:
 			set_visible_characters(get_total_character_count())
 
 func _on_Timer_timeout():
-	if(self.visible_characters < 500): # avoids infinite characters that end up blowing up the int value.
+	if(self.visible_characters < get_total_character_count()+1): # avoids infinite characters that end up blowing up the int value.
 		set_visible_characters(get_visible_characters()+1)
 
 
