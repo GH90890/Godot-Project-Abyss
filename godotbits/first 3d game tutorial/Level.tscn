@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://Assets/Steve.tscn" type="PackedScene" id=1]
 [ext_resource path="res://Scripts/steve.gd" type="Script" id=2]
@@ -9,7 +9,12 @@
 
 [sub_resource type="BoxShape" id=3]
 
-[sub_resource type="CubeMesh" id=4]
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.286275, 0.835294, 0.254902, 1 )
+metallic = 0.15
+
+[sub_resource type="CubeMesh" id=5]
+material = SubResource( 4 )
 
 [node name="Level" type="Spatial"]
 
@@ -26,7 +31,7 @@ material/0 = null
 
 [node name="Box2" type="RigidBody" parent="."]
 editor/display_folded = true
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.81752, -0.390839 )
+transform = Transform( 0.521683, 0.853139, 0, -0.853139, 0.521683, 0, 0, 0, 1, -2, 9.38084, -3.31473 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Box2"]
 shape = SubResource( 1 )
@@ -35,19 +40,41 @@ shape = SubResource( 1 )
 mesh = SubResource( 2 )
 material/0 = null
 
+[node name="Box3" type="RigidBody" parent="."]
+editor/display_folded = true
+transform = Transform( 0.606297, -0.795238, 0, 0.710782, 0.541906, -0.448472, 0.356642, 0.271907, 0.893797, 7.14426, 7.52796, 0 )
+
+[node name="CollisionShape" type="CollisionShape" parent="Box3"]
+shape = SubResource( 1 )
+
+[node name="MeshInstance" type="MeshInstance" parent="Box3"]
+mesh = SubResource( 2 )
+material/0 = null
+
 [node name="Camera" type="Camera" parent="."]
 transform = Transform( 1, 0, 0, 0, 0.343232, 0.939251, 0, -0.939251, 0.343232, 0.247396, 10.892, 6.28477 )
 
 [node name="Floor" type="StaticBody" parent="."]
-editor/display_folded = true
 transform = Transform( 10, 0, 0, 0, 1, 0, 0, 0, 10, 0, -1, 0.678035 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Floor"]
 shape = SubResource( 3 )
 
-[node name="CSGMesh" type="CSGMesh" parent="Floor/CollisionShape"]
-mesh = SubResource( 4 )
+[node name="MeshInstance" type="MeshInstance" parent="Floor"]
+mesh = SubResource( 5 )
+material/0 = null
 
 [node name="Steve" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2 )
 script = ExtResource( 2 )
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 0.443628, 0.0861725, 0.892059, -0.895762, 0.0111162, 0.444396, 0.0283784, -0.996218, 0.0821215, 13.5795, 4.96282, 0.606511 )
+light_color = Color( 0.764706, 0.913725, 1, 1 )
+light_energy = 2.61
+light_indirect_energy = 2.62
+light_specular = 0.4
+shadow_enabled = true
+spot_range = 339.4
+spot_attenuation = 0.707107
+spot_angle = 35.9
