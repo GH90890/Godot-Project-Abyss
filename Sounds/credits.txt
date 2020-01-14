@@ -1,0 +1,3 @@
+Freesound.org
+GFL7 - Bullet load and cylinder opening sounds
+dredile - Revolver Cylinder spinning sound
