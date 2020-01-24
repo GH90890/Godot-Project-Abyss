@@ -1,8 +1,11 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=12 format=2]
 
-[ext_resource path="res://Assets/Steve.tscn" type="PackedScene" id=1]
-[ext_resource path="res://Scripts/steve.gd" type="Script" id=2]
-[ext_resource path="res://new_env.tres" type="Environment" id=3]
+[ext_resource path="res://textures/TactilePaving02_nrm.jpg" type="Texture" id=1]
+[ext_resource path="res://textures/TactilePaving02_rgh.jpg" type="Texture" id=2]
+[ext_resource path="res://Assets/Steve.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scripts/steve.gd" type="Script" id=4]
+[ext_resource path="res://new_env.tres" type="Environment" id=5]
+[ext_resource path="res://Scripts/SpotLightLookAtPlayer.gd" type="Script" id=6]
 
 [sub_resource type="BoxShape" id=1]
 
@@ -13,6 +16,11 @@
 [sub_resource type="SpatialMaterial" id=4]
 albedo_color = Color( 0.286275, 0.835294, 0.254902, 1 )
 metallic = 0.15
+roughness_texture = ExtResource( 2 )
+normal_enabled = true
+normal_scale = -5.0
+normal_texture = ExtResource( 1 )
+uv1_triplanar = true
 
 [sub_resource type="CubeMesh" id=5]
 material = SubResource( 4 )
@@ -42,7 +50,6 @@ mesh = SubResource( 2 )
 material/0 = null
 
 [node name="Box3" type="RigidBody" parent="."]
-editor/display_folded = true
 transform = Transform( 0.606297, -0.795238, 0, 0.710782, 0.541906, -0.448472, 0.356642, 0.271907, 0.893797, 7.14426, 7.52796, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="Box3"]
@@ -62,16 +69,17 @@ shape = SubResource( 3 )
 mesh = SubResource( 5 )
 material/0 = null
 
-[node name="Steve" parent="." instance=ExtResource( 1 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 2 )
-script = ExtResource( 2 )
+[node name="Steve" parent="." instance=ExtResource( 3 )]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.849, 0.99, 1.171 )
+script = ExtResource( 4 )
 
 [node name="camera focus" type="Spatial" parent="Steve"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.34838, 5.86454 )
 
 [node name="InterpolatedCamera" type="InterpolatedCamera" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.55533, 36.2149 )
-environment = ExtResource( 3 )
+environment = ExtResource( 5 )
+current = true
 target = NodePath("../Steve/camera focus")
 speed = 2.0
 enabled = true
@@ -81,7 +89,20 @@ transform = Transform( 0.528646, 0.671159, -0.519691, 0, 0.612235, 0.790676, 0.8
 light_color = Color( 0.839216, 0.835294, 0.45098, 1 )
 shadow_enabled = true
 shadow_reverse_cull_face = true
-directional_shadow_split_1 = 0.14
-directional_shadow_split_2 = 0.302
-directional_shadow_split_3 = 0.392
-directional_shadow_max_distance = 35.0
+directional_shadow_max_distance = 76.0
+
+[node name="SpotLight" type="SpotLight" parent="."]
+transform = Transform( 1, 0, 0, 0, -4.37114e-008, 1, 0, -1, -4.37114e-008, -0.477138, 3.31806, -11.8002 )
+light_color = Color( 0.254902, 0.490196, 0.462745, 1 )
+light_energy = 15.12
+light_bake_mode = 2
+shadow_enabled = true
+spot_range = 66.9
+spot_angle = 10.0
+script = ExtResource( 6 )
+
+[node name="CSGBox" type="CSGBox" parent="SpotLight"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.00479317, 0 )
+width = 0.2
+height = 0.2
+depth = 0.523
