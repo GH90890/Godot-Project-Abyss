@@ -8,9 +8,14 @@
 
 config_version=4
 
-_global_script_classes=[  ]
+_global_script_classes=[ {
+"base": "RichTextEffect",
+"class": "RichTextGhost",
+"language": "GDScript",
+"path": "res://textEffects/ghost.gd"
+} ]
 _global_script_class_icons={
-
+"RichTextGhost": ""
 }
 
 [application]

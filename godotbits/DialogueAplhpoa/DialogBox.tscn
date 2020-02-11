@@ -25,6 +25,9 @@ margin_top = 533.0
 margin_right = 772.0
 margin_bottom = 553.0
 text = "Z"
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="RichTextLabel" type="RichTextLabel" parent="Polygon2D"]
 margin_left = 107.0
@@ -33,7 +36,11 @@ margin_right = 841.0
 margin_bottom = 523.0
 custom_fonts/normal_font = SubResource( 2 )
 bbcode_enabled = true
+bbcode_text = "[ghost freq=5.0 span=10.0]sa[/ghost]"
 script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
 
 [node name="Timer" type="Timer" parent="Polygon2D"]
 wait_time = 0.02
