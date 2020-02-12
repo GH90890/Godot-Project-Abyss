@@ -1,0 +1,34 @@
+[remap]
+
+importer="texture"
+type="StreamTexture"
+path="res://.import/Image041BB9D0_041C8E10.png-41625985ae89ec2c06b91bfa10a09adf.stex"
+metadata={
+"vram_texture": false
+}
+
+[deps]
+
+source_file="res://3Dmodel/_watchers_gift__mmd_danganronpa_courtrooms_and_gym_by_oneirio_d9ivlxx/Courtroom/Export-5/Image041BB9D0_041C8E10.png"
+dest_files=[ "res://.import/Image041BB9D0_041C8E10.png-41625985ae89ec2c06b91bfa10a09adf.stex" ]
+
+[params]
+
+compress/mode=0
+compress/lossy_quality=0.7
+compress/hdr_mode=0
+compress/bptc_ldr=0
+compress/normal_map=0
+flags/repeat=0
+flags/filter=true
+flags/mipmaps=false
+flags/anisotropic=false
+flags/srgb=2
+process/fix_alpha_border=true
+process/premult_alpha=false
+process/HDR_as_SRGB=false
+process/invert_color=false
+stream=false
+size_limit=0
+detect_3d=true
+svg/scale=1.0
