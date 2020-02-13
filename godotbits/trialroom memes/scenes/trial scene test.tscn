@@ -1,10 +1,11 @@
-[gd_scene load_steps=7 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://3Dmodel/_watchers_gift__mmd_danganronpa_courtrooms_and_gym_by_oneirio_d9ivlxx/Courtroom/Export-1/courtroom.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://scenes/johncena.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/copper.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/deadguy.tscn" type="PackedScene" id=4]
-[ext_resource path="res://scenes/lucky.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/junkono.tscn" type="PackedScene" id=5]
+[ext_resource path="res://scenes/lubky.tscn" type="PackedScene" id=6]
 
 [sub_resource type="Animation" id=1]
 resource_name = "spinning"
@@ -25,7 +26,7 @@ tracks/0/keys = {
 [node name="Spatial" type="Spatial"]
 
 [node name="courtroom" type="MeshInstance" parent="."]
-transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.00458527, -0.0169802, 0.0550232 )
 mesh = ExtResource( 1 )
 material/0 = null
 material/1 = null
@@ -62,25 +63,29 @@ omni_shadow_mode = 0
 
 [node name="character" type="Spatial" parent="."]
 
+[node name="lucky" parent="character" instance=ExtResource( 6 )]
+transform = Transform( 0.989949, 0, 0.707107, 0, 0.6, 0, -0.98995, 0, 0.707107, -10.5823, 1.04936, -10.8945 )
+
 [node name="copper" parent="character" instance=ExtResource( 3 )]
 transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 1, 0.114935, 1.04288, -15.2488 )
 
-[node name="lucky" parent="character" instance=ExtResource( 5 )]
-transform = Transform( 0.382683, 0, 0.92388, 0, 1, 0, -0.92388, 0, 0.382683, -14.9117, 0.685639, -6.47555 )
+[node name="junko" parent="character" instance=ExtResource( 5 )]
+transform = Transform( -0.4, 0, 3.89414e-07, 0, 0.8, 0, -1.55766e-07, 0, -1, -0.270903, 0.0806389, 15.3173 )
 
 [node name="john" parent="character" instance=ExtResource( 2 )]
 transform = Transform( 0.92388, 0, 0.267878, 0, 1, 0, -0.382683, 0, 0.646716, -5.86972, 7.4282, -14.4537 )
 
 [node name="dead" parent="character" instance=ExtResource( 4 )]
-transform = Transform( 0.646716, 0, -0.382683, 0, 0.7, 0, 0.267878, 0, 0.92388, 6.05314, 1.08446, -14.4444 )
+transform = Transform( 0.554328, 0, -0.382683, 0, 0.6, 0, 0.22961, 0, 0.92388, 6.05314, 1.08446, -14.4444 )
 
 [node name="camera anchor point" type="Spatial" parent="."]
+transform = Transform( 0.828557, 0, -0.559904, 0, 1, 0, 0.559904, 0, 0.828557, 0, 0, 0 )
 
 [node name="Camera" type="Camera" parent="camera anchor point"]
-transform = Transform( 1, 1.08106e-07, 1.67232e-08, -1.09006e-07, 0.971928, 0.235278, 9.18124e-09, -0.235278, 0.971928, -1.77665e-05, 9.82786, 10.5188 )
+transform = Transform( 1, 1.08106e-07, 1.67232e-08, -1.09006e-07, 0.971928, 0.235278, 9.18124e-09, -0.235278, 0.971928, 0, 9.828, 4 )
 fov = 56.8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="camera anchor point/Camera"]
 autoplay = "spinning"
-playback_speed = 0.5
+playback_speed = 0.3
 anims/spinning = SubResource( 1 )
