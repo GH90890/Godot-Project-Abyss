@@ -1,22 +1,23 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://3Dmodel/_watchers_gift__mmd_danganronpa_courtrooms_and_gym_by_oneirio_d9ivlxx/Courtroom/Export-1/courtroom.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://scenes/johncena.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scenes/copper.tscn" type="PackedScene" id=3]
 
 [sub_resource type="Animation" id=1]
 resource_name = "spinning"
 loop = true
 tracks/0/type = "value"
-tracks/0/path = NodePath(".:rotation_degrees")
+tracks/0/path = NodePath("..:rotation_degrees")
 tracks/0/interp = 1
-tracks/0/loop_wrap = false
+tracks/0/loop_wrap = true
 tracks/0/imported = false
 tracks/0/enabled = true
 tracks/0/keys = {
 "times": PoolRealArray( 0, 0.5, 1 ),
 "transitions": PoolRealArray( 1, 1, 1 ),
 "update": 0,
-"values": [ Vector3( -3.979, 0, 0 ), Vector3( -3.979, 180, 0 ), Vector3( -3.979, 360, 0 ) ]
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 360, 0 ) ]
 }
 
 [node name="Spatial" type="Spatial"]
@@ -58,16 +59,22 @@ omni_range = 82.9
 omni_attenuation = 1.93187
 omni_shadow_mode = 0
 
-[node name="Camera" type="Camera" parent="."]
-transform = Transform( 1, 0, 0, 0, 0.99759, 0.0693909, 0, -0.0693909, 0.99759, 0, 9.82786, 0 )
-fov = 56.8
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Camera"]
-autoplay = "spinning"
-playback_speed = 0.33
-anims/spinning = SubResource( 1 )
-
 [node name="character" type="Spatial" parent="."]
 
-[node name="Sprite3D" parent="character" instance=ExtResource( 2 )]
-transform = Transform( 0.92388, 0, 0.267878, 0, 1, 0, -0.382683, 0, 0.646716, -5.13131, 7.4282, -13.2468 )
+[node name="copper" parent="character" instance=ExtResource( 3 )]
+transform = Transform( 0.9, 0, 0, 0, 0.9, 0, 0, 0, 1, 0.114935, 9.20169, -15.2488 )
+
+[node name="john" parent="character" instance=ExtResource( 2 )]
+transform = Transform( 0.92388, 0, 0.267878, 0, 1, 0, -0.382683, 0, 0.646716, -5.86972, 7.4282, -14.4537 )
+
+[node name="camera anchor point" type="Spatial" parent="."]
+transform = Transform( 1, 0, 6.51683e-07, 0, 1, 0, -6.51683e-07, 0, 1, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="camera anchor point"]
+transform = Transform( 1, 1.08106e-07, 1.67231e-08, -1.09006e-07, 0.971928, 0.235278, 9.18124e-09, -0.235278, 0.971928, -1.77665e-05, 9.82786, 27.2624 )
+fov = 56.8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="camera anchor point/Camera"]
+autoplay = "spinning"
+playback_speed = 0.23
+anims/spinning = SubResource( 1 )
