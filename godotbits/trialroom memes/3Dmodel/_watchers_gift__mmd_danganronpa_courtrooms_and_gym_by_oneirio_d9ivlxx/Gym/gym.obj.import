@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/gym.obj-9923cbbd062676ca5823ba25ae95e71e.mesh"
+
+[deps]
+
+files=[ "res://.import/gym.obj-9923cbbd062676ca5823ba25ae95e71e.mesh" ]
+
+source_file="res://3Dmodel/_watchers_gift__mmd_danganronpa_courtrooms_and_gym_by_oneirio_d9ivlxx/Gym/gym.obj"
+dest_files=[ "res://.import/gym.obj-9923cbbd062676ca5823ba25ae95e71e.mesh", "res://.import/gym.obj-9923cbbd062676ca5823ba25ae95e71e.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

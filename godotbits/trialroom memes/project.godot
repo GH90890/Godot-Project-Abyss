@@ -17,6 +17,7 @@ _global_script_class_icons={
 
 config/name="Trialroom Memes"
 run/main_scene="res://scenes/trial scene test.tscn"
+boot_splash/image="res://Untitled.png"
 config/icon="res://icon.png"
 
 [rendering]
