@@ -1,9 +1,11 @@
 extends Spatial
 
-export var Rotate_speed : float = 0.1
+#This script is only per scene, dont add this to main layers
+onready var CameraStand = get_node(".")
+export var Rotate_speed : float = 0.4
 export var InfiniteRotation: bool = false
-export var MaxRotationAngle = Vector3(10,45,0)
-export var MinRotationAngle = Vector3(-10,-45,0)
+export var MaxRotationAngle = Vector3(5,25,0)
+export var MinRotationAngle = Vector3(-5,-25,0)
 export var CurrentRotationDegrees = Vector3(0,0,0) # (x,y,z)
 export var XspaceAllowed: bool = false
 #InfiniteRotation allows you to do 360 spins without it checking for a max angle.
@@ -15,30 +17,33 @@ func _ready() -> void:
 
 func _physics_process(delta: float):
 	movecamera(delta)
-	
+	CameraStand.set_rotation_degrees(CurrentRotationDegrees)
 
 func movecamera(delta):
 	if Input.is_action_pressed("ui_right") && Input.is_action_pressed("ui_left") :
-		pass
+		return
 
 	elif Input.is_action_pressed("ui_right"):
 		if (CurrentRotationDegrees.y > MaxRotationAngle.y):
 			return
 		CurrentRotationDegrees.y += Rotate_speed
-		
+
 	elif Input.is_action_pressed("ui_left"):
 		if (CurrentRotationDegrees.y < MinRotationAngle.y):
 			return
-		CurrentRotationDegrees.y += -Rotate_speed
+		CurrentRotationDegrees.y -= Rotate_speed
 
-#The X axis
-#	if Input.is_action_pressed("move_up") && Input.is_action_pressed("move_down") :
-#		pass#velocity.z = SPEED
-#	elif Input.is_action_pressed("move_up"):
-#		pass#velocity.z = -SPEED
-#		#$MeshInstance.rotate_x(deg2rad(-SPEED * 1.2))
-#	elif Input.is_action_pressed("move_down"):
-#		pass#velocity.z = SPEED
-#		#$MeshInstance.rotate_x(deg2rad(SPEED * 1.2))
-#	else:
-#		pass#velocity.z = lerp(velocity.z,0,0.1)
+	#x access
+	if XspaceAllowed == true:
+		if Input.is_action_pressed("ui_up") && Input.is_action_pressed("ui_down") :
+			return
+
+		elif Input.is_action_pressed("ui_up"):
+			if (CurrentRotationDegrees.x > MaxRotationAngle.x):
+				return
+			CurrentRotationDegrees.x += (Rotate_speed / 2)
+
+		elif Input.is_action_pressed("ui_down"):
+			if (CurrentRotationDegrees.x < MinRotationAngle.x):
+				return
+			CurrentRotationDegrees.x -= (Rotate_speed / 2)
