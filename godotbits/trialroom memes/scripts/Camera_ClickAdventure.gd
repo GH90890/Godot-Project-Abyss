@@ -18,19 +18,29 @@ func _ready() -> void:
 func _physics_process(delta: float):
 	movecamera(delta)
 	CameraStand.set_rotation_degrees(CurrentRotationDegrees)
+	print(CurrentRotationDegrees.y)
 
 func movecamera(delta):
+	# if its 360 degrees make it 0
+	if (int(CurrentRotationDegrees.y) >= 720):
+		CurrentRotationDegrees.y = 0	
+	#if its -degrees make it 0!
+	if (int(CurrentRotationDegrees.y) <= -720):
+		CurrentRotationDegrees.y = 0
+	
 	if Input.is_action_pressed("ui_right") && Input.is_action_pressed("ui_left") :
 		return
 
 	elif Input.is_action_pressed("ui_right"):
 		if (CurrentRotationDegrees.y > MaxRotationAngle.y):
-			return
+			if (InfiniteRotation != true):
+				return
 		CurrentRotationDegrees.y += Rotate_speed
 
 	elif Input.is_action_pressed("ui_left"):
 		if (CurrentRotationDegrees.y < MinRotationAngle.y):
-			return
+			if (InfiniteRotation != true):
+				return
 		CurrentRotationDegrees.y -= Rotate_speed
 
 	#x access

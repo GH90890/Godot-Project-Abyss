@@ -78,7 +78,7 @@ material/61 = null
 [node name="Camera stand" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 90 )
 script = ExtResource( 6 )
-Rotate_speed = 0.4
+InfiniteRotation = true
 XspaceAllowed = true
 
 [node name="Camera" type="Camera" parent="Camera stand"]
