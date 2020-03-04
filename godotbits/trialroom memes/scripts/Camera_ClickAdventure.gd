@@ -18,7 +18,6 @@ func _ready() -> void:
 func _physics_process(delta: float):
 	movecamera(delta)
 	CameraStand.set_rotation_degrees(CurrentRotationDegrees)
-	print(CurrentRotationDegrees.y)
 
 func movecamera(delta):
 	# if its 360 degrees make it 0
