@@ -16,10 +16,10 @@ func _ready() -> void:
 	pass
 
 func _physics_process(delta: float):
-	movecamera(delta)
+	moveCamera(delta)
 	CameraStand.set_rotation_degrees(CurrentRotationDegrees)
 
-func movecamera(delta):
+func moveCamera(delta):
 	# if its 360 degrees make it 0
 	if (int(CurrentRotationDegrees.y) >= 720):
 		CurrentRotationDegrees.y = 0	
@@ -31,28 +31,42 @@ func movecamera(delta):
 		return
 
 	elif Input.is_action_pressed("ui_right"):
-		if (CurrentRotationDegrees.y > MaxRotationAngle.y):
-			if (InfiniteRotation != true):
-				return
-		CurrentRotationDegrees.y += Rotate_speed
+		rotateRight()
+
 
 	elif Input.is_action_pressed("ui_left"):
-		if (CurrentRotationDegrees.y < MinRotationAngle.y):
-			if (InfiniteRotation != true):
-				return
-		CurrentRotationDegrees.y -= Rotate_speed
+		rotateLeft()
 
 	#x access
-	if XspaceAllowed == true:
-		if Input.is_action_pressed("ui_up") && Input.is_action_pressed("ui_down") :
+
+	if Input.is_action_pressed("ui_up") && Input.is_action_pressed("ui_down") :
+		return
+
+	elif Input.is_action_pressed("ui_up"):
+		rotateUp()
+
+	elif Input.is_action_pressed("ui_down"):
+		rotateDown()
+
+
+func rotateRight():
+	if (CurrentRotationDegrees.y > MaxRotationAngle.y):
+		if (InfiniteRotation != true):
 			return
-
-		elif Input.is_action_pressed("ui_up"):
-			if (CurrentRotationDegrees.x > MaxRotationAngle.x):
+	CurrentRotationDegrees.y += Rotate_speed
+	
+func rotateLeft():
+	if (CurrentRotationDegrees.y < MinRotationAngle.y):
+			if (InfiniteRotation != true):
 				return
-			CurrentRotationDegrees.x += (Rotate_speed / 2)
+	CurrentRotationDegrees.y -= Rotate_speed
 
-		elif Input.is_action_pressed("ui_down"):
-			if (CurrentRotationDegrees.x < MinRotationAngle.x):
-				return
-			CurrentRotationDegrees.x -= (Rotate_speed / 2)
+func rotateUp():
+	if (CurrentRotationDegrees.x > MaxRotationAngle.x) && (XspaceAllowed == true):
+		return
+	CurrentRotationDegrees.x += (Rotate_speed / 2)
+
+func rotateDown():
+	if (CurrentRotationDegrees.x < MinRotationAngle.x) && (XspaceAllowed == true):
+		return
+	CurrentRotationDegrees.x -= (Rotate_speed / 2)

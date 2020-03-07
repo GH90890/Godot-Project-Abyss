@@ -78,6 +78,16 @@ material/59 = null
 material/60 = null
 material/61 = null
 
+[node name="OmniLight" type="OmniLight" parent="gym"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 47.8312, 141.828 )
+light_color = Color( 1, 0.976471, 0.976471, 1 )
+light_energy = 11.64
+light_indirect_energy = 3.45
+light_specular = 0.51
+shadow_enabled = true
+omni_range = 28.6
+omni_attenuation = 0.707107
+
 [node name="Camera stand" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10, 90 )
 script = ExtResource( 6 )
@@ -95,15 +105,15 @@ script = ExtResource( 7 )
 [node name="Area" type="Area" parent="character/junko"]
 
 [node name="CollisionShape" type="CollisionShape" parent="character/junko/Area"]
-transform = Transform( 5.5, 0, 0, 0, -8.74228e-08, -4, 0, 2, -1.74846e-07, 0, 7.2582, -1.52588e-05 )
+transform = Transform( 5.5, 0, 0, 0, -3.0598e-08, -4, 0, 0.7, -1.74846e-07, 0, 7.2582, -1.52588e-05 )
 shape = SubResource( 1 )
 
 [node name="copper" parent="character" instance=ExtResource( 3 )]
-transform = Transform( -0.5, 0, -1.62921e-07, 0, 0.5, 0, 1.62921e-07, 0, -0.5, -8.23888, 4.74799, 79.0088 )
+transform = Transform( -0.5, 0, -1.62921e-07, 0, 0.5, 0, 1.62921e-07, 0, -0.5, -8.23888, 4.09494, 79.0088 )
 
 [node name="lucky" parent="character" instance=ExtResource( 4 )]
-transform = Transform( -0.8, 0, -3.25841e-07, 0, 0.4, 0, 2.60673e-07, 0, -1, -24.8692, 4.86423, 77.0302 )
+transform = Transform( -0.8, 0, -3.25841e-07, 0, 0.4, 0, 2.60673e-07, 0, -1, -24.8692, 4.24316, 77.0302 )
 
 [node name="john" parent="character" instance=ExtResource( 2 )]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 11.8468, 5.65415, 66.2774 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 11.8468, 6.78509, 66.2774 )
 [connection signal="input_event" from="character/junko/Area" to="character/junko" method="_on_Area_input_event"]
