@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/[FSR] Theory of Mm.ogg-90dee363967bddd3ff96636a85b65a6c.oggstr"
+
+[deps]
+
+source_file="res://Music/[FSR] Theory of Mm.ogg"
+dest_files=[ "res://.import/[FSR] Theory of Mm.ogg-90dee363967bddd3ff96636a85b65a6c.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

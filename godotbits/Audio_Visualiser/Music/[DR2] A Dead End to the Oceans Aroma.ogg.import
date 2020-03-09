@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/[DR2] A Dead End to the Oceans Aroma.ogg-feca466a6cc0ecffc64a074384f89467.oggstr"
+
+[deps]
+
+source_file="res://Music/[DR2] A Dead End to the Oceans Aroma.ogg"
+dest_files=[ "res://.import/[DR2] A Dead End to the Oceans Aroma.ogg-feca466a6cc0ecffc64a074384f89467.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0

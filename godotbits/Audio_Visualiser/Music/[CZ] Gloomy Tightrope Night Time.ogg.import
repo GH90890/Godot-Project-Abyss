@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/[CZ] Gloomy Tightrope Night Time.ogg-c4325bd971427ea0079ff93d2be29d4b.oggstr"
+
+[deps]
+
+source_file="res://Music/[CZ] Gloomy Tightrope Night Time.ogg"
+dest_files=[ "res://.import/[CZ] Gloomy Tightrope Night Time.ogg-c4325bd971427ea0079ff93d2be29d4b.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
