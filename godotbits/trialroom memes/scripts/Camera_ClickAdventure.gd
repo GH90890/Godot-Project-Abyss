@@ -2,7 +2,7 @@ extends Spatial
 
 #This script is only per scene, dont add this to main layers
 onready var CameraStand = get_node(".")
-export var Rotate_speed : float = 0.4
+export var Rotate_speed : float = 40
 export var InfiniteRotation: bool = false
 export var MaxRotationAngle = Vector3(5,25,0)
 export var MinRotationAngle = Vector3(-5,-25,0)
@@ -31,11 +31,11 @@ func moveCamera(delta):
 		return
 
 	elif Input.is_action_pressed("ui_right"):
-		rotateRight()
+		rotateRight(delta)
 
 
 	elif Input.is_action_pressed("ui_left"):
-		rotateLeft()
+		rotateLeft(delta)
 
 	#x access
 
@@ -43,30 +43,30 @@ func moveCamera(delta):
 		return
 
 	elif Input.is_action_pressed("ui_up"):
-		rotateUp()
+		rotateUp(delta)
 
 	elif Input.is_action_pressed("ui_down"):
-		rotateDown()
+		rotateDown(delta)
 
 
-func rotateRight():
+func rotateRight(delta):
 	if (CurrentRotationDegrees.y > MaxRotationAngle.y):
 		if (InfiniteRotation != true):
 			return
-	CurrentRotationDegrees.y += Rotate_speed
+	CurrentRotationDegrees.y += delta * Rotate_speed
 	
-func rotateLeft():
+func rotateLeft(delta):
 	if (CurrentRotationDegrees.y < MinRotationAngle.y):
 			if (InfiniteRotation != true):
 				return
-	CurrentRotationDegrees.y -= Rotate_speed
+	CurrentRotationDegrees.y -= delta * Rotate_speed
 
-func rotateUp():
+func rotateUp(delta):
 	if (CurrentRotationDegrees.x > MaxRotationAngle.x) && (XspaceAllowed == true):
 		return
-	CurrentRotationDegrees.x += (Rotate_speed / 2)
+	CurrentRotationDegrees.x += delta * (Rotate_speed / 2)
 
-func rotateDown():
+func rotateDown(delta):
 	if (CurrentRotationDegrees.x < MinRotationAngle.x) && (XspaceAllowed == true):
 		return
-	CurrentRotationDegrees.x -= (Rotate_speed / 2)
+	CurrentRotationDegrees.x -= delta * (Rotate_speed / 2)
