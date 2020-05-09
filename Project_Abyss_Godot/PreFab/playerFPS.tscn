@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=3 format=2]
 
 [ext_resource path="res://Scripts/PlayerScripts/FPScontroller.gd" type="Script" id=1]
-[ext_resource path="res://Scripts/PlayerScripts/RayCast_FPS.gd" type="Script" id=2]
 
 [sub_resource type="CapsuleShape" id=1]
 radius = 0.6
@@ -24,7 +23,6 @@ far = 200.0
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0, 0 )
 enabled = true
 cast_to = Vector3( 0, 4, 0 )
-script = ExtResource( 2 )
 
 [node name="Tail" type="RayCast" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.49056, 0 )

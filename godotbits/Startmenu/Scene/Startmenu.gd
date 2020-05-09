@@ -1,0 +1,3 @@
+#startmenu.gd
+extends Control
+

@@ -3,3 +3,4 @@ GFL7 - Bullet load and cylinder opening sounds
 dredile - Revolver Cylinder spinning sounds
 LittleRobotSoundFactory - UI Sounds
 Erokia - UI sounds
+fupicat - UI sounds

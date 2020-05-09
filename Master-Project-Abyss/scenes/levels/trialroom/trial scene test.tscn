@@ -1,0 +1,71 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://models/Courtrooms/Export-1/courtroom.obj" type="ArrayMesh" id=1]
+
+[sub_resource type="Animation" id=1]
+resource_name = "spinning"
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("..:rotation_degrees")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.5, 1 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector3( 0, 0, 0 ), Vector3( 0, 180, 0 ), Vector3( 0, 360, 0 ) ]
+}
+
+[node name="Spatial" type="Spatial"]
+
+[node name="courtroom" type="MeshInstance" parent="."]
+transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
+mesh = ExtResource( 1 )
+material/0 = null
+material/1 = null
+material/2 = null
+material/3 = null
+material/4 = null
+material/5 = null
+material/6 = null
+material/7 = null
+material/8 = null
+material/9 = null
+material/10 = null
+material/11 = null
+material/12 = null
+material/13 = null
+
+[node name="SpotLight" type="SpotLight" parent="courtroom"]
+transform = Transform( -0.00083789, 2, 3.25841e-07, 0, -3.25841e-07, 2, 2, 0.00083789, 1.36509e-10, 0.07444, 41.6344, 0.0157514 )
+light_energy = 16.0
+light_indirect_energy = 4.27
+light_specular = 0.58
+shadow_enabled = true
+shadow_bias = 1.0
+spot_range = 4096.0
+spot_attenuation = 0.784582
+spot_angle = 74.1
+
+[node name="OmniLight" type="OmniLight" parent="courtroom"]
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0.07444, 3.8147e-06, 0.0157514 )
+light_energy = 10.45
+omni_range = 82.9
+omni_attenuation = 1.93187
+omni_shadow_mode = 0
+
+[node name="character" type="Spatial" parent="."]
+
+[node name="camera anchor point" type="Spatial" parent="."]
+transform = Transform( 0.828557, 0, -0.559904, 0, 1, 0, 0.559904, 0, 0.828557, 0, 0, 0 )
+
+[node name="Camera" type="Camera" parent="camera anchor point"]
+transform = Transform( 1, 1.08106e-07, 1.67232e-08, -1.09006e-07, 0.971928, 0.235278, 9.18124e-09, -0.235278, 0.971928, 0, 9.828, 4 )
+fov = 56.8
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="camera anchor point/Camera"]
+autoplay = "spinning"
+playback_speed = 0.3
+anims/spinning = SubResource( 1 )

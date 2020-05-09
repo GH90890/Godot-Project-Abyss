@@ -7,8 +7,7 @@
 
 [node name="AudioStreamPlayer" type="AudioStreamPlayer"]
 stream = ExtResource( 1 )
-volume_db = -37.917
-pitch_scale = 0.8
+volume_db = -20.0
 autoplay = true
 mix_target = 1
 
@@ -18,9 +17,11 @@ script = ExtResource( 2 )
 
 [node name="visualiser_round" type="Node2D" parent="."]
 position = Vector2( 161.5, 411.35 )
+rotation = 1.67552
 script = ExtResource( 3 )
 
 [node name="Sprite" type="Sprite" parent="visualiser_round"]
+visible = false
 position = Vector2( 0, -3.79956 )
 scale = Vector2( 0.135, 0.135 )
 texture = ExtResource( 4 )

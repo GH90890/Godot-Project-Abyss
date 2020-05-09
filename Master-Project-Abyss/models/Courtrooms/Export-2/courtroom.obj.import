@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/courtroom.obj-3a85c5ef541a395e6faac82146382a63.mesh"
+
+[deps]
+
+files=[ "res://.import/courtroom.obj-3a85c5ef541a395e6faac82146382a63.mesh" ]
+
+source_file="res://models/Courtrooms/Export-2/courtroom.obj"
+dest_files=[ "res://.import/courtroom.obj-3a85c5ef541a395e6faac82146382a63.mesh", "res://.import/courtroom.obj-3a85c5ef541a395e6faac82146382a63.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

@@ -2,7 +2,7 @@ extends Node2D
 
 onready var spectrum = AudioServer.get_bus_effect_instance(0, 0)
 
-var definition_bars = 20
+var definition_bars = 15
 var total_w = 400
 var total_h = 200
 var min_freq = 20
@@ -11,7 +11,7 @@ var max_freq = 20000
 var max_db = 0
 var min_db = -40
 
-var accel = 50
+var accel = 23
 var histogram = [] # basical a bar ghrap that spans over a bars 
 
 func _ready() -> void:
@@ -50,7 +50,7 @@ func _process(delta):
 
 func _draw():
 	var angle = PI
-	var angle_interval = 2 * PI / definition_bars
+	var angle_interval = 1 * PI / definition_bars
 	var radius = 50
 	var length = 50
 	

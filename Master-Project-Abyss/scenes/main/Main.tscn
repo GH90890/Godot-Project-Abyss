@@ -1,0 +1,62 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://scenes/UI/MusicVisualiser+SystemUI.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/levels/pointclick/clickadventuremode.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/UI/UI_controller.gd" type="Script" id=3]
+[ext_resource path="res://icon.png" type="Texture" id=4]
+[ext_resource path="res://animation/UI/animation-move out.tres" type="Animation" id=5]
+[ext_resource path="res://animation/UI/UI-move in.tres" type="Animation" id=6]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="LEVEL LOAD" type="Spatial" parent="."]
+
+[node name="Spatial" parent="LEVEL LOAD" instance=ExtResource( 2 )]
+
+[node name="Control" type="Control" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="UI-TOP-RIGHT" type="Control" parent="Control"]
+anchor_left = 1.0
+anchor_right = 1.0
+margin_left = -113.0
+margin_bottom = 123.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/UI-TOP-RIGHT"]
+position = Vector2( 45.4877, 39.6559 )
+texture = ExtResource( 4 )
+
+[node name="UI-TOP-LEFT" type="Control" parent="Control"]
+margin_right = 40.0
+margin_bottom = 40.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="AudioVisualiser" parent="Control/UI-TOP-LEFT" instance=ExtResource( 1 )]
+margin_left = 175.0
+margin_top = 215.0
+margin_right = 175.0
+margin_bottom = 215.0
+
+[node name="UI-hide-timer" type="Timer" parent="Control"]
+wait_time = 0.3
+autostart = true
+
+[node name="UI-Animator" type="AnimationPlayer" parent="Control"]
+"anims/UI-move in" = ExtResource( 6 )
+"anims/UI-move out" = ExtResource( 5 )
+[connection signal="timeout" from="Control/UI-hide-timer" to="Control" method="_on_UIhidetimer_timeout"]

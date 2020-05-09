@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/gym.obj-e2c64600fe4ebee337636109b79d4f58.mesh"
+
+[deps]
+
+files=[ "res://.import/gym.obj-e2c64600fe4ebee337636109b79d4f58.mesh" ]
+
+source_file="res://models/Gym/gym.obj"
+dest_files=[ "res://.import/gym.obj-e2c64600fe4ebee337636109b79d4f58.mesh", "res://.import/gym.obj-e2c64600fe4ebee337636109b79d4f58.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

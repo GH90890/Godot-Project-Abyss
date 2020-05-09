@@ -1,1 +1,3 @@
 https://jsena42.bitbucket.io/god/ J. Sena for dialogue editors
+
+https://github.com/Master-J/godot_shaders for shaders
