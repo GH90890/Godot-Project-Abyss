@@ -1,10 +1,21 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=8 format=2]
 
 [ext_resource path="res://assets/player/playerFPS.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/Effects/Particles/Rain.tscn" type="PackedScene" id=2]
 
 [sub_resource type="CubeMesh" id=1]
 
 [sub_resource type="BoxShape" id=2]
+
+[sub_resource type="SpatialMaterial" id=3]
+flags_unshaded = true
+albedo_color = Color( 0, 0, 0, 1 )
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.505882, 0.0470588, 0.0470588, 1 )
+
+[sub_resource type="SpatialMaterial" id=5]
+albedo_color = Color( 0.713726, 0.435294, 0.168627, 1 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -15,6 +26,16 @@ mesh = SubResource( 1 )
 [node name="StaticBody" type="StaticBody" parent="CSGMesh"]
 
 [node name="CollisionShape" type="CollisionShape" parent="CSGMesh/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="CSGMesh7" type="CSGMesh" parent="."]
+transform = Transform( 1.55291, 0.193185, 0, -5.79556, 0.0517638, 0, 0, 0, 6, -21.4707, 5.57707, -6.99509 )
+mesh = SubResource( 1 )
+material = SubResource( 3 )
+
+[node name="StaticBody" type="StaticBody" parent="CSGMesh7"]
+
+[node name="CollisionShape" type="CollisionShape" parent="CSGMesh7/StaticBody"]
 shape = SubResource( 2 )
 
 [node name="CSGMesh2" type="CSGMesh" parent="."]
@@ -44,8 +65,40 @@ mesh = SubResource( 1 )
 [node name="CollisionShape" type="CollisionShape" parent="CSGMesh3/StaticBody"]
 shape = SubResource( 2 )
 
+[node name="CSGMesh5" type="CSGMesh" parent="."]
+transform = Transform( 2.00001, 0, 0, 0, 0.2, 0, 0, 0, 2, -2.94553, 3.52064, -8.24494 )
+mesh = SubResource( 1 )
+material = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="CSGMesh5"]
+
+[node name="CollisionShape" type="CollisionShape" parent="CSGMesh5/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="CSGMesh6" type="CSGMesh" parent="."]
+transform = Transform( -8.7423e-08, -0.2, 0, 2.00001, -8.74229e-09, 0, 0, 0, 2, -4.71141, 1.77531, -8.22375 )
+mesh = SubResource( 1 )
+material = SubResource( 4 )
+
+[node name="StaticBody" type="StaticBody" parent="CSGMesh6"]
+
+[node name="CollisionShape" type="CollisionShape" parent="CSGMesh6/StaticBody"]
+shape = SubResource( 2 )
+
+[node name="Ground" type="CSGMesh" parent="."]
+transform = Transform( 30, 0, 0, 0, 0.2, 0, 0, 0, 30, 0, -0.292622, 0 )
+mesh = SubResource( 1 )
+material = SubResource( 5 )
+
+[node name="StaticBody" type="StaticBody" parent="Ground"]
+
+[node name="CollisionShape" type="CollisionShape" parent="Ground/StaticBody"]
+shape = SubResource( 2 )
+
 [node name="Player" parent="." instance=ExtResource( 1 )]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.0343586, 1.14052, -0.0893493 )
 
 [node name="DirectionalLight" type="DirectionalLight" parent="."]
 transform = Transform( -0.258819, 0.482963, -0.836516, 0, 0.866025, 0.5, 0.965926, 0.12941, -0.224144, 0, 3, 0 )
+
+[node name="Rain" parent="." instance=ExtResource( 2 )]

@@ -1,9 +1,13 @@
-[gd_scene load_steps=5 format=2]
+[gd_scene load_steps=7 format=2]
 
 [ext_resource path="res://models/Gym/gym.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://assets/player/playerClickAdventureCamera.tscn" type="PackedScene" id=2]
 [ext_resource path="res://scenes/actors/copper.tscn" type="PackedScene" id=3]
 [ext_resource path="res://scenes/actors/carlson.tscn" type="PackedScene" id=4]
+[ext_resource path="res://scenes/Effects/Particles/Rain.tscn" type="PackedScene" id=5]
+
+[sub_resource type="BoxShape" id=1]
+extents = Vector3( 60.1615, 0.001, 18.7001 )
 
 [node name="Spatial" type="Spatial"]
 
@@ -86,6 +90,16 @@ shadow_enabled = true
 omni_range = 28.6
 omni_attenuation = 0.707107
 
+[node name="StaticBody" type="StaticBody" parent="gym"]
+
+[node name="CollisionShape" type="CollisionShape" parent="gym/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384123, 115.891 )
+shape = SubResource( 1 )
+
+[node name="CollisionShape2" type="CollisionShape" parent="gym/StaticBody"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.09556, 152.573 )
+shape = SubResource( 1 )
+
 [node name="characters" type="Spatial" parent="."]
 
 [node name="carlson" parent="characters" instance=ExtResource( 4 )]
@@ -93,3 +107,7 @@ transform = Transform( -0.589094, 0, 0.113879, 0, 0.6, 0, -0.113879, 0, -0.58909
 
 [node name="huang" parent="characters" instance=ExtResource( 3 )]
 transform = Transform( -0.587905, 0, -0.119867, 0, 0.6, 0, 0.119867, 0, -0.587905, 4.065, 1, 64.913 )
+
+[node name="Rain" parent="." instance=ExtResource( 5 )]
+transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.10822, 30.0036, 55.3489 )
+layers = 32

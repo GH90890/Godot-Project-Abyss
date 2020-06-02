@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=2]
+
+[ext_resource path="res://scripts/enviroment/Rain.gd" type="Script" id=1]
+[ext_resource path="res://materials/particles/PNG (Black background)/trace_01.png" type="Texture" id=2]
+
+[sub_resource type="SpatialMaterial" id=1]
+flags_unshaded = true
+params_blend_mode = 1
+params_cull_mode = 2
+params_billboard_mode = 2
+albedo_color = Color( 1, 1, 1, 0.168627 )
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="ParticlesMaterial" id=2]
+emission_shape = 2
+emission_box_extents = Vector3( 30, 30, 1 )
+flag_rotate_y = true
+direction = Vector3( 0, 0, 0 )
+spread = 0.0
+gravity = Vector3( 0, 0, 0 )
+initial_velocity = 70.0
+
+[sub_resource type="PlaneMesh" id=3]
+
+[node name="Rain" type="Particles"]
+transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 17.1939, 0 )
+material_override = SubResource( 1 )
+amount = 200
+visibility_aabb = AABB( -20.2272, -19.8462, -15.6627, 40.4543, 39.6923, 31.3255 )
+process_material = SubResource( 2 )
+draw_pass_1 = SubResource( 3 )
+script = ExtResource( 1 )
