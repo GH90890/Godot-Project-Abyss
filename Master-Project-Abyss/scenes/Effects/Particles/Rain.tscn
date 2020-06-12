@@ -4,6 +4,7 @@
 [ext_resource path="res://materials/particles/PNG (Black background)/trace_01.png" type="Texture" id=2]
 
 [sub_resource type="SpatialMaterial" id=1]
+render_priority = -1
 flags_unshaded = true
 params_blend_mode = 1
 params_cull_mode = 2

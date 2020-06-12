@@ -20,6 +20,10 @@ run/main_scene="res://scenes/main/Main.tscn"
 boot_splash/image="res://nice images.png"
 config/icon="res://icon.png"
 
+[editor_plugins]
+
+enabled=PoolStringArray( "EXP-System-Dialog" )
+
 [input]
 
 move_forward={
@@ -50,4 +54,6 @@ move_right={
 
 [rendering]
 
+quality/filters/use_nearest_mipmap_filter=true
+quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"

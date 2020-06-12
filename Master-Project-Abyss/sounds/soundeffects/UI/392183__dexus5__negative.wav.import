@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/392183__dexus5__negative.wav-aeafadef38ad0a4033781cd08310dd1e.sample"
+
+[deps]
+
+source_file="res://sounds/soundeffects/UI/392183__dexus5__negative.wav"
+dest_files=[ "res://.import/392183__dexus5__negative.wav-aeafadef38ad0a4033781cd08310dd1e.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

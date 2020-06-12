@@ -1,0 +1,43 @@
+[gd_scene load_steps=5 format=2]
+
+[ext_resource path="res://fonts/custom/Dialogue_Yellow_Trial.tres" type="DynamicFont" id=1]
+[ext_resource path="res://fonts/custom/Dialogue_White_Trial.tres" type="DynamicFont" id=2]
+[ext_resource path="res://fonts/custom/Dialogue_Blue_Trial.tres" type="DynamicFont" id=3]
+
+[sub_resource type="RichTextEffect" id=1]
+
+[node name="Control" type="Control"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="."]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -135.0
+color = Color( 0.0666667, 0.0666667, 0.0666667, 0.87451 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="RichTextLabel" type="RichTextLabel" parent="ColorRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -129.0
+custom_fonts/bold_italics_font = ExtResource( 1 )
+custom_fonts/italics_font = ExtResource( 3 )
+custom_fonts/bold_font = ExtResource( 1 )
+custom_fonts/normal_font = ExtResource( 2 )
+bbcode_enabled = true
+bbcode_text = "Man I would die for some [b][color=#FFF600]Orange Juice[/color][/b].
+[pulse color=#00FFAA height=0.0 freq=2.0] [i][color=#94FEFF]Hhmmm... Sweet sweet orange juice[/color][/i] [/pulse]"
+text = "Man I would die for some Orange Juice.
+[pulse color=#00FFAA height=0.0 freq=2.0] Hhmmm... Sweet sweet orange juice [/pulse]"
+custom_effects = [ SubResource( 1 ) ]
+__meta__ = {
+"_edit_use_anchors_": false
+}

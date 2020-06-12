@@ -65,7 +65,7 @@ func reset():
 func _process(delta):
 	for child in shard_velocity_map.keys():
 		child.position -= shard_velocity_map[child] * delta * 2
-		child.rotation -= shard_velocity_map[child].x * delta * -0.0002
+		child.rotation -= shard_velocity_map[child].x * delta * -0.002
 		# apply gravity to velocity map so the triang falls
 		shard_velocity_map[child].x -= delta * 1
 

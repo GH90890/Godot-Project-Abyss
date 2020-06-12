@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/bullet_click.wav-5941c3805d5bea9f3c865fe93116be00.sample"
+
+[deps]
+
+source_file="res://sounds/soundeffects/UI/bullet_click.wav"
+dest_files=[ "res://.import/bullet_click.wav-5941c3805d5bea9f3c865fe93116be00.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

@@ -1,0 +1,11 @@
+[gd_resource type="DynamicFont" load_steps=2 format=2]
+
+[ext_resource path="res://fonts/FOT-HummingStd-D.otf" type="DynamicFontData" id=1]
+
+[resource]
+size = 42
+outline_size = 1
+outline_color = Color( 0, 0, 0, 0.45098 )
+extra_spacing_bottom = 15
+extra_spacing_space = 1
+font_data = ExtResource( 1 )

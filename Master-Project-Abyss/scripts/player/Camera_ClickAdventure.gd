@@ -43,10 +43,12 @@ func moveCamera(delta):
 		return
 
 	elif Input.is_action_pressed("ui_up"):
-		rotateUp(delta)
+		if XspaceAllowed == true:
+			rotateUp(delta)
 
 	elif Input.is_action_pressed("ui_down"):
-		rotateDown(delta)
+		if XspaceAllowed == true:
+			rotateDown(delta)
 
 
 func rotateRight(delta):
@@ -70,3 +72,6 @@ func rotateDown(delta):
 	if (CurrentRotationDegrees.x < MinRotationAngle.x) && (XspaceAllowed == true):
 		return
 	CurrentRotationDegrees.x -= delta * (Rotate_speed / 2)
+
+
+

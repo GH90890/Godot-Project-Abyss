@@ -1,0 +1,21 @@
+[remap]
+
+importer="wav"
+type="AudioStreamSample"
+path="res://.import/HS_SE_005.wav-b17e3970facbc4d668104060859e0918.sample"
+
+[deps]
+
+source_file="res://sounds/soundeffects/UI/HS_SE_005.wav"
+dest_files=[ "res://.import/HS_SE_005.wav-b17e3970facbc4d668104060859e0918.sample" ]
+
+[params]
+
+force/8_bit=false
+force/mono=false
+force/max_rate=false
+force/max_rate_hz=44100
+edit/trim=false
+edit/normalize=false
+edit/loop=false
+compress/mode=0

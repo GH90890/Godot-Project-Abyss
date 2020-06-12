@@ -1,0 +1,114 @@
+[gd_scene load_steps=25 format=2]
+
+[ext_resource path="res://models/Courtrooms/Export-2/Image041E8D50_041EB590.png" type="Texture" id=1]
+[ext_resource path="res://models/Courtrooms/Export-2/Image041B9B50_041BEF90.png" type="Texture" id=2]
+[ext_resource path="res://models/Courtrooms/Export-2/Image041C5BD0_041CAC10.png" type="Texture" id=3]
+[ext_resource path="res://models/Courtrooms/Export-2/Image041EB6D0_041F5710.png" type="Texture" id=4]
+[ext_resource path="res://models/Courtrooms/Export-2/Image041CAD50_041DFD90.png" type="Texture" id=5]
+[ext_resource path="res://models/Courtrooms/Export-2/Image041C3010_041C5A50.png" type="Texture" id=6]
+[ext_resource path="res://models/Courtrooms/Export-2/Image041F5850_041F5D90.png" type="Texture" id=7]
+[ext_resource path="res://models/Courtrooms/Export-2/Image041E0A50_041E5E90.png" type="Texture" id=8]
+
+[sub_resource type="PlaneMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 7 )
+uv1_scale = Vector3( 4, 6, 1 )
+
+[sub_resource type="CubeMesh" id=3]
+
+[sub_resource type="SpatialMaterial" id=4]
+albedo_color = Color( 0.823529, 0.572549, 0.0980392, 1 )
+albedo_texture = ExtResource( 6 )
+uv1_scale = Vector3( 30, 1, 1 )
+
+[sub_resource type="PlaneMesh" id=5]
+
+[sub_resource type="SpatialMaterial" id=6]
+flags_transparent = true
+albedo_texture = ExtResource( 5 )
+uv1_scale = Vector3( 1, 1, 0 )
+
+[sub_resource type="CubeMesh" id=7]
+
+[sub_resource type="SpatialMaterial" id=8]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 1.17, 4, 1 )
+
+[sub_resource type="CubeMesh" id=9]
+
+[sub_resource type="SpatialMaterial" id=10]
+albedo_texture = ExtResource( 2 )
+
+[sub_resource type="PlaneMesh" id=11]
+
+[sub_resource type="SpatialMaterial" id=12]
+flags_transparent = true
+albedo_texture = ExtResource( 8 )
+
+[sub_resource type="QuadMesh" id=13]
+
+[sub_resource type="SpatialMaterial" id=14]
+albedo_color = Color( 0.541176, 0.541176, 0.513726, 1 )
+albedo_texture = ExtResource( 4 )
+uv1_scale = Vector3( 16, 16, 3 )
+
+[sub_resource type="QuadMesh" id=15]
+
+[sub_resource type="SpatialMaterial" id=16]
+flags_transparent = true
+albedo_color = Color( 0.796078, 0.796078, 0.796078, 1 )
+albedo_texture = ExtResource( 1 )
+uv1_scale = Vector3( 1, 10, 1 )
+
+[node name="New courtroom" type="Spatial"]
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 147.811 )
+
+[node name="walls" type="Spatial" parent="."]
+
+[node name="Wall" type="CSGMesh" parent="walls"]
+transform = Transform( -9.77524e-06, 1, -9.61651e-07, 0, -4.37114e-08, -22, -60, -1.62921e-07, 1.56673e-13, -54, 21.6493, 0 )
+mesh = SubResource( 1 )
+material = SubResource( 2 )
+
+[node name="WAllDetail" type="CSGMesh" parent="walls/Wall"]
+transform = Transform( 0.999999, -1.81966e-13, 5.55865e-22, 5.45697e-12, 0.0999999, 1.56319e-13, -1.69407e-21, -1.80411e-16, 0.1, 0, 0, 0.943908 )
+mesh = SubResource( 3 )
+material = SubResource( 4 )
+
+[node name="Wall2" type="CSGMesh" parent="walls"]
+transform = Transform( 60, 1.1921e-07, -1.14638e-13, 0, -4.37114e-08, -22, -7.15256e-06, 1, -9.61651e-07, 0, 21.649, -54 )
+mesh = SubResource( 1 )
+material = SubResource( 2 )
+
+[node name="curtains" type="CSGMesh" parent="walls"]
+transform = Transform( -2.44381e-06, 1, -2.60673e-06, 0, -1.62921e-07, -16, -15, -1.62921e-07, 4.2469e-13, -53.0123, 15.1035, -14.8163 )
+mesh = SubResource( 5 )
+material = SubResource( 6 )
+
+[node name="pillar" type="CSGMesh" parent="walls"]
+transform = Transform( 3, 2.01072e-06, -6.99382e-08, -2.62268e-07, 23, 0, -1.31134e-07, -8.78915e-14, -1.6, -53.5663, 24.3015, -30.1831 )
+mesh = SubResource( 7 )
+material = SubResource( 8 )
+
+[node name="CSGMesh" type="CSGMesh" parent="walls/pillar"]
+transform = Transform( 1.1, 3.55271e-15, 2.11386e-13, 1.77636e-15, 0.1, 0, -1.98952e-13, -4.23516e-22, 1.25, 0, -1.08644, 0.00382233 )
+mesh = SubResource( 9 )
+material = SubResource( 10 )
+
+[node name="lanters" type="CSGMesh" parent="walls"]
+transform = Transform( -1.20206e-07, 1, -1.20206e-07, 0, -4.37114e-08, -2.75, -2.75, -4.37114e-08, 5.25439e-15, -52.0847, 16, 11.068 )
+mesh = SubResource( 11 )
+material = SubResource( 12 )
+
+[node name="floor" type="Spatial" parent="."]
+
+[node name="Trialroom Floor" type="CSGMesh" parent="floor"]
+transform = Transform( 120, 0, 0, 0, -5.24537e-06, 1, 0, -120, -4.37114e-08, 0, 0, 0 )
+mesh = SubResource( 13 )
+material = SubResource( 14 )
+
+[node name="carpet" type="CSGMesh" parent="floor"]
+transform = Transform( 7, 0, 0, 0, -1.14044e-05, 1, 0, -70, -1.62921e-07, -13.4097, 0.1, -13.2988 )
+mesh = SubResource( 15 )
+material = SubResource( 16 )

@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/notice2.ogg-119efd6444893412adf070b2b9908f37.oggstr"
+
+[deps]
+
+source_file="res://sounds/soundeffects/UI/notice2.ogg"
+dest_files=[ "res://.import/notice2.ogg-119efd6444893412adf070b2b9908f37.oggstr" ]
+
+[params]
+
+loop=true
+loop_offset=0
