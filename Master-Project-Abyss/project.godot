@@ -22,7 +22,7 @@ config/icon="res://icon.png"
 
 [editor_plugins]
 
-enabled=PoolStringArray( "EXP-System-Dialog" )
+enabled=PoolStringArray( "EXP-System-Dialog", "SIsilicon.vfx.godrays" )
 
 [input]
 
@@ -57,3 +57,6 @@ move_right={
 quality/filters/use_nearest_mipmap_filter=true
 quality/filters/msaa=1
 environment/default_environment="res://default_env.tres"
+quality/godrays/sample_number=50
+quality/godrays/use_pcf5=false
+quality/godrays/dither_amount=1.0

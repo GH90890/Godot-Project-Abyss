@@ -34,9 +34,9 @@ custom_fonts/bold_font = ExtResource( 1 )
 custom_fonts/normal_font = ExtResource( 2 )
 bbcode_enabled = true
 bbcode_text = "Man I would die for some [b][color=#FFF600]Orange Juice[/color][/b].
-[pulse color=#00FFAA height=0.0 freq=2.0] [i][color=#94FEFF]Hhmmm... Sweet sweet orange juice[/color][/i] [/pulse]"
+ [i][color=#94FEFF]Hhmmm... Sweet sweet orange juice[/color][/i]"
 text = "Man I would die for some Orange Juice.
-[pulse color=#00FFAA height=0.0 freq=2.0] Hhmmm... Sweet sweet orange juice [/pulse]"
+ Hhmmm... Sweet sweet orange juice"
 custom_effects = [ SubResource( 1 ) ]
 __meta__ = {
 "_edit_use_anchors_": false

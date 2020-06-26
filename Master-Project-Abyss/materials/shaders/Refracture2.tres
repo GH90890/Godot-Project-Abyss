@@ -1,0 +1,21 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://materials/screen_UVs/CameraFilterPack_Broken_Screen1-resources.assets-3867.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+//res://materials/screen_UVs/CameraFilterPack_Broken_Screen1-resources.assets-3867.png
+uniform float warp_value = 0.5;
+uniform sampler2D warped : hint_albedo;
+
+void fragment() {
+    vec2 fakeUV = textureLod(warped, SCREEN_UV, 0.0).rb;
+    vec2 lerpedUV = mix(SCREEN_UV, fakeUV.rg, warp_value);
+    COLOR.rgb = textureLod(SCREEN_TEXTURE, lerpedUV, 0.0).rgb;
+}
+"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/warp_value = 0.0
+shader_param/warped = ExtResource( 1 )

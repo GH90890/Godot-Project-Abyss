@@ -1,0 +1,15 @@
+[remap]
+
+importer="ogg_vorbis"
+type="AudioStreamOGGVorbis"
+path="res://.import/thunder.ogg-e5a84d929e3f164333aebda32fedcbe1.oggstr"
+
+[deps]
+
+source_file="res://sounds/ambience/weather/thunder.ogg"
+dest_files=[ "res://.import/thunder.ogg-e5a84d929e3f164333aebda32fedcbe1.oggstr" ]
+
+[params]
+
+loop=false
+loop_offset=0

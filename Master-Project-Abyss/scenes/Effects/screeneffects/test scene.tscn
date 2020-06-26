@@ -1,0 +1,21 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://nice images.png" type="Texture" id=2]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="nice images" type="Sprite" parent="."]
+position = Vector2( 513.381, 300.418 )
+texture = ExtResource( 2 )
+
+[node name="ColorRect" type="ColorRect" parent="nice images"]
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_left = -513.0
+margin_top = -300.0
+margin_right = -513.0
+margin_bottom = -300.0
+color = Color( 0, 0.619608, 0.109804, 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

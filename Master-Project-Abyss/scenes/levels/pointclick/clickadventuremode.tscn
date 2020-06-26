@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=2]
+[gd_scene load_steps=14 format=2]
 
 [ext_resource path="res://models/Gym/gym.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://scripts/player/Camera_ClickAdventure.gd" type="Script" id=2]
@@ -7,6 +7,10 @@
 [ext_resource path="res://scenes/Effects/Particles/Rain.tscn" type="PackedScene" id=5]
 [ext_resource path="res://scenes/actors/bobbington.tscn" type="PackedScene" id=6]
 [ext_resource path="res://scenes/actors/hipster.tscn" type="PackedScene" id=7]
+[ext_resource path="res://scenes/actors/chef.tscn" type="PackedScene" id=8]
+[ext_resource path="res://scenes/actors/cosplayer.tscn" type="PackedScene" id=9]
+[ext_resource path="res://scenes/actors/scientist.tscn" type="PackedScene" id=10]
+[ext_resource path="res://scenes/actors/hipster2.tscn" type="PackedScene" id=11]
 
 [sub_resource type="BoxShape" id=1]
 extents = Vector3( 60.1615, 0.001, 18.7001 )
@@ -17,12 +21,14 @@ ambient_light_color = Color( 1, 0.956863, 0.901961, 1 )
 [node name="Spatial" type="Spatial"]
 
 [node name="Camera Stand" type="Spatial" parent="."]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.78881, 68.2536 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 9.78881, 58.7991 )
 script = ExtResource( 2 )
+MaxRotationAngle = Vector3( 5, 35, 0 )
+MinRotationAngle = Vector3( -5, -35, 0 )
 XspaceAllowed = true
 
 [node name="Camera" type="Camera" parent="Camera Stand"]
-transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, -16.1389 )
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 0, 0, -19.4189 )
 current = true
 
 [node name="gym" type="MeshInstance" parent="."]
@@ -92,14 +98,14 @@ material/60 = null
 material/61 = null
 
 [node name="OmniLight" type="OmniLight" parent="gym"]
-transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 47.8312, 141.828 )
+transform = Transform( 2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 47.8312, 106.385 )
 light_color = Color( 1, 0.976471, 0.976471, 1 )
-light_energy = 11.64
+light_energy = 3.29
 light_indirect_energy = 3.45
 light_specular = 0.51
 shadow_enabled = true
-omni_range = 28.6
-omni_attenuation = 0.707107
+omni_range = 38.4
+omni_attenuation = 1.51572
 
 [node name="StaticBody" type="StaticBody" parent="gym"]
 
@@ -115,16 +121,28 @@ shape = SubResource( 1 )
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52635, 0, 0 )
 
 [node name="carlson" parent="characters" instance=ExtResource( 4 )]
-transform = Transform( -0.571908, 0, 0.181442, 0, 0.6, 0, -0.181442, 0, -0.571908, -8.56065, 0.683178, 64.9996 )
+transform = Transform( -0.571908, 0, 0.181442, 0, 0.6, 0, -0.181442, 0, -0.571908, -7.36289, 0.625662, 64.9996 )
 
 [node name="huang" parent="characters" instance=ExtResource( 3 )]
-transform = Transform( -0.580038, 0, -0.15348, 0, 0.6, 0, 0.15348, 0, -0.580038, 4.065, 1, 64.913 )
+transform = Transform( -0.580038, 0, -0.15348, 0, 0.6, 0, 0.15348, 0, -0.580038, 4.065, 0.605217, 64.913 )
 
 [node name="bobbington" parent="characters" instance=ExtResource( 6 )]
-transform = Transform( -0.66, 0, -1.95505e-07, 0, 0.66, 0, 2.15055e-07, 0, -0.6, -1.35293, 0.137726, 65.3531 )
+transform = Transform( -0.66, 0, -1.95505e-07, 0, 0.66, 0, 2.15055e-07, 0, -0.6, -1.35293, 0.193828, 65.3531 )
 
 [node name="hipster" parent="characters" instance=ExtResource( 7 )]
-transform = Transform( -0.50422, 0, 0.233178, 0, 0.57, 0, -0.265823, 0, -0.442299, -12.9991, -0.130395, 63.8322 )
+transform = Transform( -0.50422, 0, 0.233178, 0, 0.57, 0, -0.265823, 0, -0.442299, -11.8013, -0.387043, 63.8322 )
+
+[node name="hipster2" parent="characters" instance=ExtResource( 11 )]
+transform = Transform( -0.500069, 0, -0.239959, 0, 0.57, 0, 0.273552, 0, -0.438657, 7.63101, 0.160038, 61.2448 )
+
+[node name="scientist" parent="characters" instance=ExtResource( 10 )]
+transform = Transform( -0.545716, 0, 0.249388, 0, 0.6, 0, -0.249388, 0, -0.545716, -16.6451, 0.168442, 61.3705 )
+
+[node name="cosplayer" parent="characters" instance=ExtResource( 9 )]
+transform = Transform( -0.50422, 0, 0.233178, 0, 0.57, 0, -0.265823, 0, -0.442299, -19.6437, 0.0630293, 58.2196 )
+
+[node name="chef" parent="characters" instance=ExtResource( 8 )]
+transform = Transform( -0.351421, 0, -0.393667, 0, 0.57, 0, 0.448779, 0, -0.308264, 10.4033, 0.00240421, 59.0517 )
 
 [node name="Rain" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, -0.10822, 30.0036, 67.666 )

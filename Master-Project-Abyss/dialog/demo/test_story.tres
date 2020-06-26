@@ -1,0 +1,65 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/EXP-System-Dialog/Resource_EditorStory/EXP_EditorStory.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+TYPE = "EXP_Story_editor"
+names = {
+"Very first test": 1
+}
+story = {
+1: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "The first text",
+"name": "Very first test",
+"nodes": {
+1: {
+"graph_offset": Vector2( 20, 20 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 441, 150 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 120, 220 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker> Text McCool </speaker>
+<dialog>Man I would die for some [b][color=#FFF600]Orange Juice[/color][/b].
+[i][color=#94FEFF]Hhmmm... Sweet sweet orange juice...[/color][/i]</dialog>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 660, 60 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker> Text McCool </speaker>
+<dialog>Orange juice indeed.</dialog>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 820, 260 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+}
+}
+}
+}
+available_dids = [ 2 ]
+groups = [  ]

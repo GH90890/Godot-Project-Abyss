@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=2]
+[gd_scene load_steps=10 format=2]
 
 [ext_resource path="res://scenes/UI/MusicVisualiser+SystemUI.tscn" type="PackedScene" id=1]
 [ext_resource path="res://scenes/levels/pointclick/clickadventuremode.tscn" type="PackedScene" id=2]
@@ -7,6 +7,7 @@
 [ext_resource path="res://animation/UI/animation-move out.tres" type="Animation" id=5]
 [ext_resource path="res://animation/UI/UI-move in.tres" type="Animation" id=6]
 [ext_resource path="res://fonts/FOT-HummingStd-D.otf" type="DynamicFontData" id=7]
+[ext_resource path="res://scenes/Effects/screeneffects/screen_refracture.tscn" type="PackedScene" id=8]
 
 [sub_resource type="DynamicFont" id=1]
 size = 22
@@ -36,7 +37,7 @@ __meta__ = {
 [node name="UI-TOP-RIGHT" type="Control" parent="Control"]
 anchor_left = 1.0
 anchor_right = 1.0
-margin_left = -113.0
+margin_left = 217.0
 margin_bottom = 123.0
 __meta__ = {
 "_edit_use_anchors_": false
@@ -59,6 +60,7 @@ __meta__ = {
 }
 
 [node name="UI-TOP-LEFT" type="Control" parent="Control"]
+margin_left = -400.0
 margin_right = 40.0
 margin_bottom = 40.0
 __meta__ = {
@@ -74,4 +76,6 @@ autostart = true
 [node name="UI-Animator" type="AnimationPlayer" parent="Control"]
 "anims/UI-move in" = ExtResource( 6 )
 "anims/UI-move out" = ExtResource( 5 )
+
+[node name="Refracture" parent="Control" instance=ExtResource( 8 )]
 [connection signal="timeout" from="Control/UI-hide-timer" to="Control" method="_on_UIhidetimer_timeout"]

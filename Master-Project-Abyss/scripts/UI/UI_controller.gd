@@ -11,6 +11,8 @@ func _input(event):
 	if event is InputEventKey and event.pressed:
 		if event.scancode != KEY_ENTER:
 			currentSeconds = 0
+	if Input.is_action_pressed("ui_accept"):
+		$"Refracture/refracturePlayer".play("Shatter to normal")
 
 func hideUI():
 	if (uiActive == true):

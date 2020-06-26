@@ -1,0 +1,25 @@
+[gd_resource type="ShaderMaterial" load_steps=3 format=2]
+
+[ext_resource path="res://materials/screen_UVs/CameraFilterPack_Broken_Screen1-resources.assets-3867.png" type="Texture" id=1]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D UVDistortTex : hint_black;
+uniform float warp_value = 1.0;
+uniform vec3 outline_color = vec3(1, 1, 1); //white
+
+void fragment() {
+    vec3 fakeUV = textureLod(UVDistortTex, SCREEN_UV, 0.0).rgb;
+    float warp_value_clamped = clamp(warp_value, 0.0, 0.5);
+    vec2 lerpedUV = mix(SCREEN_UV, fakeUV.rg, warp_value_clamped);
+    vec3 tex_color = textureLod(SCREEN_TEXTURE, lerpedUV, 0.0).rgb;
+    float outline_strength = fakeUV.b * warp_value_clamped * 2.0;
+    COLOR.rgb = (1.0 - outline_strength) * tex_color + outline_strength * outline_color;
+}"
+
+[resource]
+shader = SubResource( 1 )
+shader_param/warp_value = 0.5
+shader_param/outline_color = Vector3( 0.5, 0.7, 1 )
+shader_param/UVDistortTex = ExtResource( 1 )

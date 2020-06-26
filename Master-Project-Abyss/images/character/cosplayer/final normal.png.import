@@ -2,8 +2,8 @@
 
 importer="texture"
 type="StreamTexture"
-path.s3tc="res://.import/suprised.png-661ab3088f44174fff92c1538ff8e40a.s3tc.stex"
-path.etc2="res://.import/suprised.png-661ab3088f44174fff92c1538ff8e40a.etc2.stex"
+path.s3tc="res://.import/final normal.png-495c78af39e32450a366d7da4f32cf84.s3tc.stex"
+path.etc2="res://.import/final normal.png-495c78af39e32450a366d7da4f32cf84.etc2.stex"
 metadata={
 "imported_formats": [ "s3tc", "etc2" ],
 "vram_texture": true
@@ -11,17 +11,17 @@ metadata={
 
 [deps]
 
-source_file="res://images/character/bobbington/suprised.png"
-dest_files=[ "res://.import/suprised.png-661ab3088f44174fff92c1538ff8e40a.s3tc.stex", "res://.import/suprised.png-661ab3088f44174fff92c1538ff8e40a.etc2.stex" ]
+source_file="res://images/character/cosplayer/final normal.png"
+dest_files=[ "res://.import/final normal.png-495c78af39e32450a366d7da4f32cf84.s3tc.stex", "res://.import/final normal.png-495c78af39e32450a366d7da4f32cf84.etc2.stex" ]
 
 [params]
 
 compress/mode=2
-compress/lossy_quality=0.0
+compress/lossy_quality=1.0
 compress/hdr_mode=0
 compress/bptc_ldr=0
 compress/normal_map=0
-flags/repeat=true
+flags/repeat=0
 flags/filter=false
 flags/mipmaps=false
 flags/anisotropic=false

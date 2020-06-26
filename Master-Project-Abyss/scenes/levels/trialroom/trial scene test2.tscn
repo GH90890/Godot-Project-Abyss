@@ -1,4 +1,4 @@
-[gd_scene load_steps=45 format=2]
+[gd_scene load_steps=47 format=2]
 
 [ext_resource path="res://models/Courtrooms/Export-2/courtroom.obj" type="ArrayMesh" id=1]
 [ext_resource path="res://models/Courtrooms/Export-2/Image041AC650_041B1A90.png" type="Texture" id=2]
@@ -14,6 +14,8 @@
 [ext_resource path="res://models/Courtrooms/Export-2/Image041F5850_041F5D90.png" type="Texture" id=12]
 [ext_resource path="res://scenes/actors/copper.tscn" type="PackedScene" id=13]
 [ext_resource path="res://scenes/actors/carlson.tscn" type="PackedScene" id=14]
+[ext_resource path="res://scenes/actors/hipster.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/actors/bobbington.tscn" type="PackedScene" id=16]
 
 [sub_resource type="SpatialMaterial" id=1]
 albedo_texture = ExtResource( 2 )
@@ -298,23 +300,30 @@ mesh = SubResource( 17 )
 material = SubResource( 18 )
 
 [node name="character" type="Spatial" parent="."]
+transform = Transform( 0.6, 0, 0, 0, 0.6, 0, 0, 0, 0.6, 0, 0, 0 )
 
 [node name="copper" parent="character" instance=ExtResource( 13 )]
-transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.880571, 1.77843, -15.1254 )
+transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0.880571, 1.77843, -25.7367 )
 
 [node name="copper2" parent="character" instance=ExtResource( 14 )]
-transform = Transform( 0.784679, 0, -0.619902, 0, 1, 0, 0.619902, 0, 0.784679, 10.5753, 0.0806379, -10.5443 )
+transform = Transform( 0.766044, 0, -0.642788, 0, 1, 0, 0.642788, 0, 0.766044, 18.5263, 1.97274, -17.799 )
+
+[node name="hipster" parent="character" instance=ExtResource( 15 )]
+transform = Transform( 0.766044, 0, 0.642788, 0, 1, 0, -0.642788, 0, 0.766044, -17.55, 0.6955, -17.8258 )
+
+[node name="bobbington" parent="character" instance=ExtResource( 16 )]
+transform = Transform( 0.173648, 0, -0.984808, 0, 1, 0, 0.984808, 0, 0.173648, 24.6333, 1.64316, 0.241446 )
 
 [node name="camera anchor point" type="Spatial" parent="."]
 
 [node name="Camera" type="Camera" parent="camera anchor point"]
-transform = Transform( 1, 1.08106e-07, 1.67232e-08, -1.09006e-07, 0.971928, 0.235278, 9.18124e-09, -0.235278, 0.971928, 0, 9.828, 4 )
+transform = Transform( 1, 0, 0, 0, 0.99863, 0.052336, 0, -0.052336, 0.99863, 0, 9.828, -5.04 )
 current = true
 fov = 56.8
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="camera anchor point/Camera"]
 autoplay = "spinning"
-playback_speed = 0.3
+playback_speed = 0.03
 anims/spinning = SubResource( 19 )
 
 [node name="New courtroom" type="Spatial" parent="."]
