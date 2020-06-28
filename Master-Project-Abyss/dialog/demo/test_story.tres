@@ -6,14 +6,14 @@
 script = ExtResource( 1 )
 TYPE = "EXP_Story_editor"
 names = {
-"Very first test": 1
+"Demo/Test": 1
 }
 story = {
 1: {
 "available_nid": [  ],
 "groups": [  ],
 "human_readable_description": "The first text",
-"name": "Very first test",
+"name": "Demo/Test",
 "nodes": {
 1: {
 "graph_offset": Vector2( 20, 20 ),
