@@ -1,0 +1,43 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/EXP-System-Dialog/Resource_BakedStory/EXP_BakedStory.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+TYPE = "EXP_Baked_Story"
+story = {
+1: {
+"nodes": {
+1: {
+"links": {
+
+},
+"text": "{
+  \"characters\": [
+    {
+      \"id\": 0,
+      \"name\": \"Huang\",
+      \"dialog_ID\": \"stage/1\",
+      \"head_height\": 1.4
+    },
+    {
+      \"id\": 1,
+      \"name\": \"Eve\",
+      \"dialog_ID\": \"stage/2\",
+      \"head_height\": 1.4
+    },
+    {
+      \"id\": 2,
+      \"name\": \"Lance\",
+      \"dialog_ID\": \"stage/3\",
+      \"head_height\": 1.4
+    }
+  ]
+}"
+}
+}
+}
+}
+names = {
+"docks/start": 1
+}

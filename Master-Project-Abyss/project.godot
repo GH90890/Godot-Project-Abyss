@@ -20,6 +20,10 @@ run/main_scene="res://scenes/main/Main.tscn"
 boot_splash/image="res://nice images.png"
 config/icon="res://icon.png"
 
+[autoload]
+
+Global_Registry="*res://scripts/UI/dialogue/Simulated_Registry.gd"
+
 [editor_plugins]
 
 enabled=PoolStringArray( "EXP-System-Dialog", "SIsilicon.vfx.godrays" )

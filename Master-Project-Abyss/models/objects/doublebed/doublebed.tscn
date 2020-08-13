@@ -1,0 +1,33 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://models/objects/doublebed/737-10.obj" type="ArrayMesh" id=1]
+[ext_resource path="res://models/objects/doublebed/hollandshee.jpg" type="Texture" id=2]
+[ext_resource path="res://models/objects/doublebed/Wood1.jpg" type="Texture" id=3]
+
+[sub_resource type="CubeMesh" id=1]
+
+[sub_resource type="SpatialMaterial" id=2]
+albedo_texture = ExtResource( 3 )
+uv1_scale = Vector3( 3, 3, 1 )
+
+[sub_resource type="SpatialMaterial" id=3]
+albedo_color = Color( 0.752941, 0.752941, 0.752941, 1 )
+albedo_texture = ExtResource( 2 )
+uv1_scale = Vector3( 0.7, 0.7, 6 )
+
+[node name="Spatial" type="Spatial"]
+
+[node name="MeshInstance" type="MeshInstance" parent="."]
+transform = Transform( 11.191, 0, 0, 0, 1.5, 0, 0, 0, 10.7, 0, 1.52532, -0.292449 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="MeshInstance2" type="MeshInstance" parent="."]
+transform = Transform( 10.99, 0, 0, 0, 5, 0, 0, 0, 0.31, 0.0276814, 7.27404, 10.0347 )
+mesh = SubResource( 1 )
+material/0 = SubResource( 2 )
+
+[node name="737-10" type="MeshInstance" parent="."]
+transform = Transform( 0.01, 0, 0, 0, 0.01, 0, 0, 0, 0.01, -3.75721, 0, -9.59919 )
+mesh = ExtResource( 1 )
+material/0 = SubResource( 3 )

@@ -6,7 +6,10 @@
 script = ExtResource( 1 )
 TYPE = "EXP_Story_editor"
 names = {
-"Demo/Test": 1
+"Demo/Branching": 2,
+"Demo/Test": 1,
+"Test/TextureLibrary": 3,
+"texture/test": 4
 }
 story = {
 1: {
@@ -26,7 +29,7 @@ story = {
 "type": "line"
 },
 2: {
-"graph_offset": Vector2( 120, 220 ),
+"graph_offset": Vector2( 460, 160 ),
 "links": {
 0: 3
 },
@@ -38,9 +41,9 @@ story = {
 "type": "line"
 },
 3: {
-"graph_offset": Vector2( 660, 60 ),
+"graph_offset": Vector2( 900, 60 ),
 "links": {
-0: 4
+0: 5
 },
 "rect_size": Vector2( 324, 137 ),
 "slot_amount": 1,
@@ -49,7 +52,7 @@ story = {
 "type": "line"
 },
 4: {
-"graph_offset": Vector2( 820, 260 ),
+"graph_offset": Vector2( 1040, 320 ),
 "links": {
 
 },
@@ -57,9 +60,208 @@ story = {
 "slot_amount": 1,
 "text": "<end>",
 "type": "line"
+},
+5: {
+"graph_offset": Vector2( 500, 440 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker> Text McCool </speaker>
+<dialog>I've come to tell you.. <variable>Test</variable>.</dialog>",
+"type": "line"
+}
+}
+},
+2: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "Demo/Branching",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 580, 140 ),
+"links": {
+0: 4,
+1: 5,
+2: 6
+},
+"rect_size": Vector2( 452, 154 ),
+"slot_amount": 3,
+"text": "<speaker>Test man</speaker>
+<dialog>I've presented you with a choice!</dialog>
+<choiceJSON>{\"Repeat\" : 0, \"I agree\" : 1, \"Orange text\" : 2}</choiceJSON>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( 1560, 120 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 1100, -120 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Test man</speaker>
+<dialog>Didn't we go over this already?!</dialog>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 1080, 120 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Test man</speaker>
+<dialog>I see.</dialog>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 1100, 300 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker> Text McCool </speaker>
+<dialog>Man I would die for some [b][color=#FFF600]Orange Juice[/color][/b].
+[i][color=#94FEFF]Hhmmm... Sweet sweet orange juice...[/color][/i]</dialog>",
+"type": "line"
+}
+}
+},
+3: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "A list of textures file paths used for Dialog",
+"name": "Test/TextureLibrary",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "{
+\"bobbington\" : \"res://images/character/bobbington/1.png\",
+\"carlson\" : \"res://images/character/carlson/1.png\",
+\"science\" : \"res://images/character/scientist/final thinking.png\",
+\"huang\" : \"res://images/character/huang/1.png\",
+\"actress\" : \"res://images/character/cosplayer/1.png\"
+}",
+"type": "line"
+}
+}
+},
+4: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "New Dialog - Enter Human Readable Description.",
+"name": "texture/test",
+"nodes": {
+1: {
+"graph_offset": Vector2( -144, 32 ),
+"links": {
+0: 3
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<start>",
+"type": "line"
+},
+2: {
+"graph_offset": Vector2( 896, 32 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<end>",
+"type": "line"
+},
+3: {
+"graph_offset": Vector2( -16, 256 ),
+"links": {
+0: 4
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Huang</speaker>
+<dialog>You need to sort your issues out, me boy.</dialog>
+<image>huang</image>",
+"type": "line"
+},
+4: {
+"graph_offset": Vector2( 448, 272 ),
+"links": {
+0: 5
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Carl</speaker>
+<dialog>List'n man, I ain't got no problem. Its yo demented ass that got issues.</dialog>
+<image>carlson</image>",
+"type": "line"
+},
+5: {
+"graph_offset": Vector2( 32, 496 ),
+"links": {
+0: 6
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Helga</speaker>
+<dialog>Typical, you two just have to start to bitch at eachother.</dialog>
+<image>actress</image>",
+"type": "line"
+},
+6: {
+"graph_offset": Vector2( 560, 512 ),
+"links": {
+0: 7
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Brockson</speaker>
+<dialog>I'd pay much, many coins to just have everyone of you silenced!</dialog>
+<image>science</image>",
+"type": "line"
+},
+7: {
+"graph_offset": Vector2( 1104, 432 ),
+"links": {
+0: 2
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "<speaker>Bobbington</speaker>
+<dialog>Oi oi oi, You olways seems to want everyone to be silent, science man.</dialog>
+<image>bobbington</image>",
+"type": "line"
 }
 }
 }
 }
-available_dids = [ 2 ]
+available_dids = [  ]
 groups = [  ]

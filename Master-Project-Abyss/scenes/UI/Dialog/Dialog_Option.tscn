@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://fonts/custom/Dialogue_White_Trial.tres" type="DynamicFont" id=1]
+[ext_resource path="res://scripts/UI/dialogue/Dialog_Option.gd" type="Script" id=2]
+[ext_resource path="res://images/UI/texture/menu_section_9patch.png" type="Texture" id=3]
+
+[node name="Option" type="NinePatchRect"]
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+margin_top = -56.0
+grow_vertical = 0
+rect_min_size = Vector2( 0, 48 )
+texture = ExtResource( 3 )
+patch_margin_left = 3
+patch_margin_top = 3
+patch_margin_right = 3
+patch_margin_bottom = 3
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Button" type="Button" parent="."]
+anchor_right = 1.0
+anchor_bottom = 1.0
+custom_fonts/font = ExtResource( 1 )
+text = "This is a filler text."
+flat = true
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="pressed" from="Button" to="." method="_on_Button_pressed"]

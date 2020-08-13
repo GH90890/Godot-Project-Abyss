@@ -1,0 +1,19 @@
+[remap]
+
+importer="wavefront_obj"
+type="Mesh"
+path="res://.import/ModernDeskOBJ.obj-fe54b985280b8923ad2d2e951220ccd7.mesh"
+
+[deps]
+
+files=[ "res://.import/ModernDeskOBJ.obj-fe54b985280b8923ad2d2e951220ccd7.mesh" ]
+
+source_file="res://models/objects/ModernDesktop/ModernDeskOBJ.obj"
+dest_files=[ "res://.import/ModernDeskOBJ.obj-fe54b985280b8923ad2d2e951220ccd7.mesh", "res://.import/ModernDeskOBJ.obj-fe54b985280b8923ad2d2e951220ccd7.mesh" ]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3( 1, 1, 1 )
+offset_mesh=Vector3( 0, 0, 0 )
+optimize_mesh=true

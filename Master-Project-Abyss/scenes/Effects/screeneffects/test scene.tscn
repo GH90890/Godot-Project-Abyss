@@ -1,21 +1,73 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=9 format=2]
 
+[ext_resource path="res://materials/gradient/red_purple_gradient.tres" type="Gradient" id=1]
 [ext_resource path="res://nice images.png" type="Texture" id=2]
+
+[sub_resource type="Shader" id=3]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform sampler2D gradient: hint_black;
+uniform float mix_amount = 1.0;
+
+void fragment(){
+	vec4 input_color = texture(TEXTURE, UV);
+	float greyscale_value = dot(input_color.rgb, vec3(0.299, 0.587, 0.114));
+	vec3 sampled_color = texture(gradient, vec2(greyscale_value, 0.0)).rgb;
+
+	COLOR.rgb = mix(input_color.rgb, sampled_color, mix_amount);
+	COLOR.a = input_color.a;
+}"
+
+[sub_resource type="GradientTexture" id=4]
+gradient = ExtResource( 1 )
+
+[sub_resource type="ShaderMaterial" id=5]
+shader = SubResource( 3 )
+shader_param/mix_amount = 1.0
+shader_param/gradient = SubResource( 4 )
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+render_mode unshaded;
+
+uniform sampler2D gradient: hint_black;
+uniform float mix_amount = 1.0;
+
+void fragment(){
+	vec4 input_color = texture(TEXTURE, UV);
+	float greyscale_value = dot(input_color.rgb, vec3(0.299, 0.587, 0.114));
+	vec3 sampled_color = texture(gradient, vec2(greyscale_value, 0.0)).rgb;
+
+	COLOR.rgb = mix(input_color.rgb, sampled_color, mix_amount);
+	COLOR.a = input_color.a;
+}"
+
+[sub_resource type="GradientTexture" id=6]
+gradient = ExtResource( 1 )
+width = 226
+
+[sub_resource type="ShaderMaterial" id=2]
+shader = SubResource( 1 )
+shader_param/mix_amount = 1.0
+shader_param/gradient = SubResource( 6 )
 
 [node name="Node2D" type="Node2D"]
 
 [node name="nice images" type="Sprite" parent="."]
-position = Vector2( 513.381, 300.418 )
+material = SubResource( 5 )
+position = Vector2( 198.295, 775.863 )
 texture = ExtResource( 2 )
+offset = Vector2( 315.086, -475.445 )
 
 [node name="ColorRect" type="ColorRect" parent="nice images"]
+material = SubResource( 2 )
 anchor_right = 1.0
 anchor_bottom = 1.0
-margin_left = -513.0
-margin_top = -300.0
-margin_right = -513.0
-margin_bottom = -300.0
-color = Color( 0, 0.619608, 0.109804, 1 )
+margin_left = -483.328
+margin_top = -60.2028
+margin_right = -483.328
+margin_bottom = -60.2028
 __meta__ = {
 "_edit_use_anchors_": false
 }

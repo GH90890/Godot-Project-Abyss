@@ -24,7 +24,7 @@ story = {
 },
 3: {
 "links": {
-0: 4
+0: 5
 },
 "text": "<speaker> Text McCool </speaker>
 <dialog>Orange juice indeed.</dialog>"
@@ -34,10 +34,140 @@ story = {
 
 },
 "text": "<end>"
+},
+5: {
+"links": {
+0: 4
+},
+"text": "<speaker> Text McCool </speaker>
+<dialog>I've come to tell you.. <variable>Test</variable>.</dialog>"
+}
+}
+},
+2: {
+"nodes": {
+1: {
+"links": {
+0: 2
+},
+"text": "<start>"
+},
+2: {
+"links": {
+0: 4,
+1: 5,
+2: 6
+},
+"text": "<speaker>Test man</speaker>
+<dialog>I've presented you with a choice!</dialog>
+<choiceJSON>{\"Repeat\" : 0, \"I agree\" : 1, \"Orange text\" : 2}</choiceJSON>"
+},
+3: {
+"links": {
+
+},
+"text": "<end>"
+},
+4: {
+"links": {
+0: 2
+},
+"text": "<speaker>Test man</speaker>
+<dialog>Didn't we go over this already?!</dialog>"
+},
+5: {
+"links": {
+0: 3
+},
+"text": "<speaker>Test man</speaker>
+<dialog>I see.</dialog>"
+},
+6: {
+"links": {
+0: 3
+},
+"text": "<speaker> Text McCool </speaker>
+<dialog>Man I would die for some [b][color=#FFF600]Orange Juice[/color][/b].
+[i][color=#94FEFF]Hhmmm... Sweet sweet orange juice...[/color][/i]</dialog>"
+}
+}
+},
+3: {
+"nodes": {
+1: {
+"links": {
+
+},
+"text": "{
+\"bobbington\" : \"res://images/character/bobbington/1.png\",
+\"carlson\" : \"res://images/character/carlson/1.png\",
+\"science\" : \"res://images/character/scientist/final thinking.png\",
+\"huang\" : \"res://images/character/huang/1.png\",
+\"actress\" : \"res://images/character/cosplayer/1.png\"
+}"
+}
+}
+},
+4: {
+"nodes": {
+1: {
+"links": {
+0: 3
+},
+"text": "<start>"
+},
+2: {
+"links": {
+
+},
+"text": "<end>"
+},
+3: {
+"links": {
+0: 4
+},
+"text": "<speaker>Huang</speaker>
+<dialog>You need to sort your issues out, me boy.</dialog>
+<image>huang</image>"
+},
+4: {
+"links": {
+0: 5
+},
+"text": "<speaker>Carl</speaker>
+<dialog>List'n man, I ain't got no problem. Its yo demented ass that got issues.</dialog>
+<image>carlson</image>"
+},
+5: {
+"links": {
+0: 6
+},
+"text": "<speaker>Helga</speaker>
+<dialog>Typical, you two just have to start to bitch at eachother.</dialog>
+<image>actress</image>"
+},
+6: {
+"links": {
+0: 7
+},
+"text": "<speaker>Brockson</speaker>
+<dialog>I'd pay much, many coins to just have everyone of you silenced!</dialog>
+<image>science</image>"
+},
+7: {
+"links": {
+0: 2
+},
+"text": "<speaker>Bobbington</speaker>
+<dialog>Oi oi oi, You olways seems to want everyone to be silent, science man.</dialog>
+<image>bobbington</image>"
 }
 }
 }
 }
 names = {
-"Demo/Test": 1
+"Demo/Branching": 2,
+"Demo/Test": 1,
+"Test/TextureLibrary": 3,
+"texture/test": 4
 }

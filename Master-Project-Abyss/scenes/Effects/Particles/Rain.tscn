@@ -24,6 +24,7 @@ initial_velocity = 70.0
 [sub_resource type="PlaneMesh" id=3]
 
 [node name="Rain" type="Particles"]
+process_priority = -1
 transform = Transform( -4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 17.1939, 0 )
 material_override = SubResource( 1 )
 amount = 200

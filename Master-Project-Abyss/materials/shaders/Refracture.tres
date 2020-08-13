@@ -20,6 +20,6 @@ void fragment() {
 
 [resource]
 shader = SubResource( 1 )
-shader_param/warp_value = 0.5
+shader_param/warp_value = 0.0
 shader_param/outline_color = Vector3( 0.5, 0.7, 1 )
 shader_param/UVDistortTex = ExtResource( 1 )

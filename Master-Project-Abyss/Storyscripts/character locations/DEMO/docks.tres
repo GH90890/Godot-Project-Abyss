@@ -1,0 +1,53 @@
+[gd_resource type="Resource" load_steps=2 format=2]
+
+[ext_resource path="res://addons/EXP-System-Dialog/Resource_EditorStory/EXP_EditorStory.gd" type="Script" id=1]
+
+[resource]
+script = ExtResource( 1 )
+TYPE = "EXP_Story_editor"
+names = {
+"docks/start": 1
+}
+story = {
+1: {
+"available_nid": [  ],
+"groups": [  ],
+"human_readable_description": "start at the docks.",
+"name": "docks/start",
+"nodes": {
+1: {
+"graph_offset": Vector2( 40, 40 ),
+"links": {
+
+},
+"rect_size": Vector2( 324, 137 ),
+"slot_amount": 1,
+"text": "{
+  \"characters\": [
+    {
+      \"id\": 0,
+      \"name\": \"Huang\",
+      \"dialog_ID\": \"stage/1\",
+      \"head_height\": 1.4
+    },
+    {
+      \"id\": 1,
+      \"name\": \"Eve\",
+      \"dialog_ID\": \"stage/2\",
+      \"head_height\": 1.4
+    },
+    {
+      \"id\": 2,
+      \"name\": \"Lance\",
+      \"dialog_ID\": \"stage/3\",
+      \"head_height\": 1.4
+    }
+  ]
+}",
+"type": "line"
+}
+}
+}
+}
+available_dids = [  ]
+groups = [  ]

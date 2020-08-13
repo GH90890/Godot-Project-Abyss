@@ -1,0 +1,34 @@
+[gd_resource type="ShaderMaterial" load_steps=4 format=2]
+
+[sub_resource type="Shader" id=1]
+code = "shader_type canvas_item;
+
+uniform sampler2D noise;
+uniform vec2 distortion_scale;
+uniform float intensity;
+uniform float speed;
+
+
+
+void fragment(){
+	float distortion = texture(noise, UV*0.1*distortion_scale + TIME * speed).x ;
+	distortion -= 0.5;
+
+	COLOR = texture(SCREEN_TEXTURE, SCREEN_UV - distortion * intensity);
+}"
+
+[sub_resource type="OpenSimplexNoise" id=2]
+seed = 2
+period = 29.7
+persistence = 0.508
+
+[sub_resource type="NoiseTexture" id=3]
+seamless = true
+noise = SubResource( 2 )
+
+[resource]
+shader = SubResource( 1 )
+shader_param/distortion_scale = Vector2( 0.011, 3.399 )
+shader_param/intensity = 0.056
+shader_param/speed = 0.02
+shader_param/noise = SubResource( 3 )
