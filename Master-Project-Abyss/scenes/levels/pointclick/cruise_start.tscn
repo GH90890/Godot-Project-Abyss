@@ -1,4 +1,4 @@
-[gd_scene load_steps=28 format=2]
+[gd_scene load_steps=31 format=2]
 
 [ext_resource path="res://images/objects/CRUISESHIPpng.png" type="Texture" id=1]
 [ext_resource path="res://scripts/player/Camera_ClickAdventure.gd" type="Script" id=2]
@@ -13,10 +13,16 @@
 [ext_resource path="res://scenes/actors/hipster2.tscn" type="PackedScene" id=11]
 [ext_resource path="res://images/objects/ocean background.png" type="Texture" id=12]
 [ext_resource path="res://materials/shaders/3d shaders/Refracture.tres" type="Material" id=13]
+[ext_resource path="res://materials/shaders/watershader_foam/Water3DDemo.tres" type="Material" id=14]
+[ext_resource path="res://scenes/actors/SPWN-actor.tscn" type="PackedScene" id=15]
+[ext_resource path="res://scenes/TEST/jsontest.gd" type="Script" id=16]
+[ext_resource path="res://scenes/actors/master_actor.tscn" type="PackedScene" id=17]
 
 [sub_resource type="SpatialMaterial" id=1]
 render_priority = -2
 flags_transparent = true
+params_diffuse_mode = 4
+params_specular_mode = 3
 albedo_texture = ExtResource( 1 )
 
 [sub_resource type="PlaneMesh" id=2]
@@ -35,36 +41,29 @@ flags_unshaded = true
 albedo_color = Color( 0.45098, 0.45098, 0.458824, 1 )
 albedo_texture = ExtResource( 12 )
 
-[sub_resource type="SpatialMaterial" id=12]
-params_blend_mode = 3
-albedo_texture = ExtResource( 12 )
-metallic = 0.08
-uv1_scale = Vector3( 1, -0.3, 0.1 )
-uv1_offset = Vector3( 1, 1, 1 )
+[sub_resource type="SpatialMaterial" id=9]
+albedo_color = Color( 0.419608, 0.290196, 0.164706, 1 )
 
-[sub_resource type="PlaneMesh" id=13]
-material = SubResource( 12 )
-size = Vector2( 400, 40 )
-
-[sub_resource type="SpatialMaterial" id=14]
-albedo_color = Color( 0.756863, 0.756863, 0.756863, 1 )
-
-[sub_resource type="CubeMesh" id=7]
-material = SubResource( 14 )
+[sub_resource type="CubeMesh" id=10]
+material = SubResource( 9 )
 size = Vector3( 400, 2, 40 )
 
-[sub_resource type="CylinderMesh" id=8]
+[sub_resource type="CylinderMesh" id=11]
 top_radius = 0.1
 bottom_radius = 0.1
 height = 15.0
 radial_segments = 25
 rings = 1
 
-[sub_resource type="PlaneMesh" id=9]
+[sub_resource type="PlaneMesh" id=12]
 material = ExtResource( 13 )
 size = Vector2( 3, 2 )
 
-[sub_resource type="Environment" id=10]
+[sub_resource type="PlaneMesh" id=16]
+material = ExtResource( 14 )
+size = Vector2( 4, 4 )
+
+[sub_resource type="Environment" id=13]
 background_mode = 3
 background_color = Color( 0.627451, 0.623529, 0.654902, 1 )
 ambient_light_color = Color( 0.537255, 0.533333, 0.54902, 1 )
@@ -81,7 +80,7 @@ auto_exposure_min_luma = 0.0
 auto_exposure_max_luma = 9.6
 auto_exposure_speed = 0.01
 
-[sub_resource type="BoxShape" id=11]
+[sub_resource type="BoxShape" id=14]
 extents = Vector3( 60.1615, 0.001, 18.7001 )
 
 [node name="Spatial" type="Spatial"]
@@ -89,7 +88,7 @@ extents = Vector3( 60.1615, 0.001, 18.7001 )
 [node name="WORLD ANCHOR" type="Spatial" parent="."]
 
 [node name="cruiseship" type="CSGMesh" parent="WORLD ANCHOR"]
-process_priority = -2
+process_priority = -3
 transform = Transform( -1, -8.74228e-08, 3.82137e-15, 0, -4.37114e-08, -1, 8.74228e-08, -1, 4.37114e-08, 0, 37.4091, 103.416 )
 mesh = SubResource( 2 )
 
@@ -111,22 +110,23 @@ shadow_enabled = true
 shadow_bias = 1.54
 omni_range = 40.0
 
-[node name="water" type="CSGMesh" parent="WORLD ANCHOR"]
-transform = Transform( 2, 0, 1.74846e-07, 0, 1, 0, -3.49691e-07, 0, 1, 1.13067, -6.92736, 81.6196 )
-mesh = SubResource( 13 )
-
 [node name="water2" type="CSGMesh" parent="WORLD ANCHOR"]
-transform = Transform( 2, 0, 1.74846e-07, 0, 1, 0, -3.49691e-07, 0, 1, 1.13067, -23.75, 90.6086 )
-mesh = SubResource( 7 )
+transform = Transform( 2, 0, 1.74846e-07, 0, 1, 0, -3.49691e-07, 0, 1, 1.13067, -21.9394, 90.6086 )
+mesh = SubResource( 10 )
 
-[node name="CSGMesh" type="CSGMesh" parent="WORLD ANCHOR"]
+[node name="flag" type="CSGMesh" parent="WORLD ANCHOR"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6445, 6.80375, 65.5255 )
-mesh = SubResource( 8 )
+mesh = SubResource( 11 )
 
-[node name="CSGMesh" type="CSGMesh" parent="WORLD ANCHOR/CSGMesh"]
+[node name="CSGMesh" type="CSGMesh" parent="WORLD ANCHOR/flag"]
 transform = Transform( -1, -3.82137e-15, -8.74228e-08, -8.74228e-08, 4.37114e-08, 1, 0, 1, -4.37114e-08, -1.47236, 6.46905, 0 )
 invert_faces = true
-mesh = SubResource( 9 )
+mesh = SubResource( 12 )
+
+[node name="watershader" type="CSGMesh" parent="WORLD ANCHOR"]
+process_priority = -5
+transform = Transform( 400, 0, 0, 0, 1, 0, 0, 0, 400, 0, -12.011, 243.309 )
+mesh = SubResource( 16 )
 
 [node name="Camera Stand" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.81472, 57.9465 )
@@ -142,6 +142,7 @@ far = 747.4
 
 [node name="characters" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 5.52635, -0.376514, 52.113 )
+visible = false
 
 [node name="carlson" parent="characters" instance=ExtResource( 4 )]
 transform = Transform( -0.571908, 0, 0.181442, 0, 0.6, 0, -0.181442, 0, -0.571908, -7.36289, 0.625662, 11.8181 )
@@ -165,10 +166,10 @@ transform = Transform( -0.545716, 0, 0.249388, 0, 0.6, 0, -0.249388, 0, -0.54571
 transform = Transform( -0.50422, 0, 0.233178, 0, 0.57, 0, -0.265823, 0, -0.442299, -19.6437, 0.0630293, 5.03813 )
 
 [node name="chef" parent="characters" instance=ExtResource( 8 )]
-transform = Transform( -0.351421, 0, -0.393667, 0, 0.57, 0, 0.448779, 0, -0.308264, 10.4033, 0.00240421, 5.87023 )
+transform = Transform( -0.351421, 0, -0.393667, 0, 0.57, 0, 0.448779, 0, -0.308264, 10.3794, -0.0949907, 6.13371 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 10 )
+environment = SubResource( 13 )
 
 [node name="Rain" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1.3599, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 10.2769, 30.0036, 67.666 )
@@ -179,4 +180,22 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384123, 115.891 )
-shape = SubResource( 11 )
+shape = SubResource( 14 )
+
+[node name="character points" type="Spatial" parent="."]
+script = ExtResource( 16 )
+
+[node name="SPWN-Actor0" parent="character points" instance=ExtResource( 15 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 11.441, -0.531392, 57.3083 )
+
+[node name="SPWN-Actor1" parent="character points" instance=ExtResource( 15 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 5.63158, -0.531392, 57.3083 )
+
+[node name="SPWN-Actor2" parent="character points" instance=ExtResource( 15 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, 1.80337, -0.525125, 58.3446 )
+
+[node name="SPWN-Actor3" parent="character points" instance=ExtResource( 15 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -2.20551, -0.543245, 58.18 )
+
+[node name="master_actor" parent="character points" instance=ExtResource( 17 )]
+transform = Transform( -1, 0, -3.25841e-07, 0, 1, 0, 3.25841e-07, 0, -1, -1.8501, -1.07008, 52.9396 )

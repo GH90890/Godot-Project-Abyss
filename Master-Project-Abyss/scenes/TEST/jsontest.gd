@@ -23,4 +23,6 @@ func _load_character_positions():
 		#var character_path = raw_characters[key]
 		#var loaded_texture = load(character_path)
 		#_character_position[key] = loaded_texture
-		print(key.id)
+		var _characterPOS = find_node("SPWN-Actor" + str(key.id))
+		
+		print(key.name)
