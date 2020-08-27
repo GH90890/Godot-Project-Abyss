@@ -41,29 +41,29 @@ flags_unshaded = true
 albedo_color = Color( 0.45098, 0.45098, 0.458824, 1 )
 albedo_texture = ExtResource( 12 )
 
-[sub_resource type="SpatialMaterial" id=9]
+[sub_resource type="SpatialMaterial" id=7]
 albedo_color = Color( 0.419608, 0.290196, 0.164706, 1 )
 
-[sub_resource type="CubeMesh" id=10]
-material = SubResource( 9 )
+[sub_resource type="CubeMesh" id=8]
+material = SubResource( 7 )
 size = Vector3( 400, 2, 40 )
 
-[sub_resource type="CylinderMesh" id=11]
+[sub_resource type="CylinderMesh" id=9]
 top_radius = 0.1
 bottom_radius = 0.1
 height = 15.0
 radial_segments = 25
 rings = 1
 
-[sub_resource type="PlaneMesh" id=12]
+[sub_resource type="PlaneMesh" id=10]
 material = ExtResource( 13 )
 size = Vector2( 3, 2 )
 
-[sub_resource type="PlaneMesh" id=16]
+[sub_resource type="PlaneMesh" id=11]
 material = ExtResource( 14 )
 size = Vector2( 4, 4 )
 
-[sub_resource type="Environment" id=13]
+[sub_resource type="Environment" id=12]
 background_mode = 3
 background_color = Color( 0.627451, 0.623529, 0.654902, 1 )
 ambient_light_color = Color( 0.537255, 0.533333, 0.54902, 1 )
@@ -80,7 +80,7 @@ auto_exposure_min_luma = 0.0
 auto_exposure_max_luma = 9.6
 auto_exposure_speed = 0.01
 
-[sub_resource type="BoxShape" id=14]
+[sub_resource type="BoxShape" id=13]
 extents = Vector3( 60.1615, 0.001, 18.7001 )
 
 [node name="Spatial" type="Spatial"]
@@ -112,21 +112,21 @@ omni_range = 40.0
 
 [node name="water2" type="CSGMesh" parent="WORLD ANCHOR"]
 transform = Transform( 2, 0, 1.74846e-07, 0, 1, 0, -3.49691e-07, 0, 1, 1.13067, -21.9394, 90.6086 )
-mesh = SubResource( 10 )
+mesh = SubResource( 8 )
 
 [node name="flag" type="CSGMesh" parent="WORLD ANCHOR"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 29.6445, 6.80375, 65.5255 )
-mesh = SubResource( 11 )
+mesh = SubResource( 9 )
 
 [node name="CSGMesh" type="CSGMesh" parent="WORLD ANCHOR/flag"]
 transform = Transform( -1, -3.82137e-15, -8.74228e-08, -8.74228e-08, 4.37114e-08, 1, 0, 1, -4.37114e-08, -1.47236, 6.46905, 0 )
 invert_faces = true
-mesh = SubResource( 12 )
+mesh = SubResource( 10 )
 
 [node name="watershader" type="CSGMesh" parent="WORLD ANCHOR"]
 process_priority = -5
 transform = Transform( 400, 0, 0, 0, 1, 0, 0, 0, 400, 0, -12.011, 243.309 )
-mesh = SubResource( 16 )
+mesh = SubResource( 11 )
 
 [node name="Camera Stand" type="Spatial" parent="."]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.81472, 57.9465 )
@@ -169,7 +169,7 @@ transform = Transform( -0.50422, 0, 0.233178, 0, 0.57, 0, -0.265823, 0, -0.44229
 transform = Transform( -0.351421, 0, -0.393667, 0, 0.57, 0, 0.448779, 0, -0.308264, 10.3794, -0.0949907, 6.13371 )
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource( 13 )
+environment = SubResource( 12 )
 
 [node name="Rain" parent="." instance=ExtResource( 5 )]
 transform = Transform( 1.3599, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 10.2769, 30.0036, 67.666 )
@@ -180,7 +180,7 @@ transform = Transform( 0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0, 0, 0 )
 
 [node name="CollisionShape" type="CollisionShape" parent="StaticBody"]
 transform = Transform( 1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.384123, 115.891 )
-shape = SubResource( 14 )
+shape = SubResource( 13 )
 
 [node name="character points" type="Spatial" parent="."]
 script = ExtResource( 16 )
